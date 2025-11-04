@@ -81,22 +81,25 @@ git commit -m "Tarea 002 INACABADA"
 
 ```
 gitGraph
-   commit id: "Inicio" tag: "master"
+   commit: "Inicio" branch: "master"
    branch DEV
    checkout DEV
-   commit id: "Base de desarrollo"
-   branch jesus-feature-login
+   commit: "Base de desarrollo"
+   branch jesus
+   checkout jesus
+   branch login
+   checkout login
    commit id: "Tarea 001 INACABADA"
    commit id: "Tarea 001 ACABADA"
    checkout DEV
    merge jesus-feature-login id: "Merge tarea 001"
    branch maria-ui-ajustes
-   commit id: "Tarea 002 ACABADA"
+   commit: "Tarea 002 ACABADA"
    checkout DEV
    merge maria-ui-ajustes id: "Merge tarea 002"
    checkout master
-   merge DEV id: "Integración estable"
-   commit id: "Push final"
+   merge DEV: "Integración estable"
+   commit: "Push final"
 ```
 
 ---
