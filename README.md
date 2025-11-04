@@ -1,39 +1,85 @@
-# The-Three-Faces-web
-## Flujo de trabajo con GIT:
-* Obtener el repositorio:
-Si no lo tienes en el ordenador:
-~~~
-git clone <enlace del repositorio de github>
-~~~
-Si ya lo tienes en el ordenador: 
-~~~
+# The-Three-Faces-web  
+## Flujo de trabajo con Git
+
+### 1. Obtener el repositorio
+**Si no tienes el repositorio en tu ordenador:**
+```bash
+git clone <enlace-del-repositorio-de-github>
+```
+
+**Si ya lo tienes:**
+```bash
 git pull
-~~~
-* IMPORTANTE: No se trabaja dentro de la rama master directamente.
-* Cada uno tendrá su propia rama dentro de la rama "DEV" donde podrá realizar sus tareas.
-* Nueva tarea = Nueva rama. Para crear una rama:
-~~~
-git branch <nombre de la rama>
-~~~
-Para cambiar a esa rama:
-~~~
-git checkout <nombre de la rama>
-~~~
- * Cada vez que se complete una tarea, un commit con una mensaje descriptivo.
- * Si tienes que hacer un push, pero no has acabado la tarea, haz el commit pero añade INACABADO al final.
-Ejemplo:
-~~~
+```
+
+---
+
+### 2. No trabajar directamente en la rama `master`
+La rama `master` (o `main`) solo debe contener el código **estable y listo para producción**.  
+Toda la programación se realiza en ramas derivadas de `DEV`.
+
+---
+
+### 3. Estructura de ramas
+```
+master
+│
+└── DEV
+     ├── jesus-feature-login
+     ├── maria-ui-ajustes
+     ├── pablo-bugfix-menu
+     └── ...
+```
+
+Cada desarrollador tiene su **propia rama** dentro de `DEV` para trabajar de forma aislada.
+
+---
+
+### 4. Crear y cambiar de rama
+
+**Crear una nueva rama para una tarea:**
+```bash
+git branch <nombre-de-la-rama>
+```
+
+**Cambiarte a esa rama:**
+```bash
+git checkout <nombre-de-la-rama>
+```
+
+Nombra tus ramas de forma clara, por ejemplo:  
+`feature/nueva-pantalla-inventario` o `bugfix/error-colisiones`.
+
+---
+
+### 5. Commits y mensajes
+
+Cada vez que completes una parte significativa de una tarea, haz un commit con un mensaje **claro y descriptivo**:
+
+Tarea completada:
+```bash
 git commit -m "Tarea 001 ACABADA"
-~~~
-o
-~~~
+```
+
+Tarea aún en progreso:
+```bash
 git commit -m "Tarea 002 INACABADA"
-~~~
-Se hará un pull request o un merge a la rama DEV.
-Si hay conflictos se corrigen.
-Se integran los cambios a la rama master.
-Se hace el push.
-Diagrama:
+```
+
+---
+
+### 6. Integración de cambios
+
+1. Una vez terminada la tarea, se hace un **pull request o merge** hacia la rama `DEV`.  
+2. Si existen conflictos, se resuelven antes de hacer el merge.  
+3. Cuando `DEV` está verificada y estable, se integran los cambios a `master`.  
+4. Finalmente, se realiza el **push** a GitHub.
+
+---
+
+###  7. Diagrama del flujo de trabajo
+
+```mermaid
 gitGraph
    commit id: "Inicio" tag: "master"
    branch DEV
@@ -51,3 +97,16 @@ gitGraph
    checkout master
    merge DEV id: "Integración estable"
    commit id: "Push final"
+```
+
+---
+
+### 8. Buenas prácticas
+
+- Actualiza tu rama frecuentemente con los últimos cambios de `DEV`:
+  ```bash
+  git pull origin DEV
+  ```
+- Antes de hacer un merge, verifica que el proyecto **compila y funciona**.
+- Usa commits pequeños y descriptivos.
+- Evita los commits innecesarios en `master`.
