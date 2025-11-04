@@ -1,6 +1,15 @@
 # The-Three-Faces-web
 ## Flujo de trabajo con GIT:
-* Obtener el repositorio: Si no lo tienes en el ordenador: git clone <enlace del repositorio de github>. Si ya lo tienes en el ordenador: git pull.
+* Obtener el repositorio:
+Si no lo tienes en el ordenador:
+~~~
+git clone <enlace del repositorio de github>
+~~~
+Si ya lo tienes en el ordenador: 
+~~~
+git pull
+~~~
+* Cada uno tendrá su propia rama donde podrá realizar sus tareas.
 * Nueva tarea = Nueva rama. Para crear una rama:
 ~~~
 git branch <nombre de la rama>
