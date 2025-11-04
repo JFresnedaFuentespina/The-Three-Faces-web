@@ -9,7 +9,7 @@ Si ya lo tienes en el ordenador:
 ~~~
 git pull
 ~~~
-* Cada uno tendrá su propia rama donde podrá realizar sus tareas.
+* Cada uno tendrá su propia rama dentro de la rama "DEV" donde podrá realizar sus tareas.
 * Nueva tarea = Nueva rama. Para crear una rama:
 ~~~
 git branch <nombre de la rama>
