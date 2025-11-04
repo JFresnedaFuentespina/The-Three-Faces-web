@@ -79,7 +79,7 @@ git commit -m "Tarea 002 INACABADA"
 
 ###  7. Diagrama del flujo de trabajo
 
-```mermaid
+```
 gitGraph
    commit id: "Inicio" tag: "master"
    branch DEV
