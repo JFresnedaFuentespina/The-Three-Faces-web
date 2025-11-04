@@ -33,4 +33,21 @@ Se hará un pull request o un merge a la rama DEV.
 Si hay conflictos se corrigen.
 Se integran los cambios a la rama master.
 Se hace el push.
-<img width="1896" height="580" alt="image" src="https://github.com/user-attachments/assets/de8a7ef4-b59e-4049-85f9-ed293ff04f55" />
+Diagrama:
+gitGraph
+   commit id: "Inicio" tag: "master"
+   branch DEV
+   checkout DEV
+   commit id: "Base de desarrollo"
+   branch jesus-feature-login
+   commit id: "Tarea 001 INACABADA"
+   commit id: "Tarea 001 ACABADA"
+   checkout DEV
+   merge jesus-feature-login id: "Merge tarea 001"
+   branch maria-ui-ajustes
+   commit id: "Tarea 002 ACABADA"
+   checkout DEV
+   merge maria-ui-ajustes id: "Merge tarea 002"
+   checkout master
+   merge DEV id: "Integración estable"
+   commit id: "Push final"
