@@ -24,6 +24,16 @@ body {
     font-family:'Ringbearer', serif;
 }
 
+h2{
+    margin: 10px 0 10px 0;
+    padding: 0;
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+}
+
 .navbar {
     display: flex;
     align-items: center;
@@ -78,4 +88,45 @@ body {
         gap: 20px;
 
     }
+}
+
+
+
+/*Section about the creator of the game*/
+
+
+.container-creator {
+    background-color: darkgrey;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    text-align: right;
+}
+
+.container-creator section {
+    background-color: blanchedalmond;
+    display: flexbox;
+    justify-content: flex-end;
+    width: 400px;
+}
+
+.socialmedia{
+    background-color: brown;
+    display: flex;
+}
+
+.socialmedia img{
+    padding-left: 5px;
+    height: 20px;
+}
+
+.creatorphoto {
+    background-color: blueviolet;
+    height: 330px;
+    align-content: center;
+}
+.creatorphoto img{
+    padding: 0px 20px 0px 20px;
+    border-radius: 50%;
+    height: 300px;
 }
