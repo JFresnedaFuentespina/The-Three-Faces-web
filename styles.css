@@ -1,0 +1,81 @@
+@font-face {
+font-family:"Ringbearer";
+src: url("fonts/Ringbearer Medium V2.woff2") format("woff2");
+}
+
+/*Variable colors*/
+:root {
+    --bg-color-gold: rgb(249, 207, 19);
+    --text-color: black;
+    --underline-color: rgb(125, 73, 11);
+    --hover-background-color: rgb(231, 174, 16);
+}
+
+/*Prevents problems with the padding*/
+*{ 
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family:'Ringbearer', serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-color-gold);
+    color: var(--text-color);
+    overflow: hidden;
+    border-bottom: 1px solid var(--underline-color);
+}
+
+.links-nav{
+    display: flex;
+    gap: 50px;
+    list-style: none;
+}
+
+.navbar .logo-navbar{
+    margin-right: auto;
+
+}
+
+.links-nav a{
+    display: flex;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.2em 0.3em;
+    transition: var(--underline-color) 0.3 ease;
+}
+
+.links-nav a:hover {
+    color:var(--text-color);
+    text-decoration: underline;
+    background-color: var(--hover-background-color);
+    transition: background-color 0.3s ease;
+
+}
+
+@media screen and (max-width: 768px){
+    nav{
+    position: fixed;  /*Element doesn't move when page scolss*/
+    top: 0;
+    right: 0;
+    height:100vh; /*the elements height will be 100% of the visible area of the browser window height*/
+    width: min(15em, 100%); /*for elemtns to be seen properly on smaller screens*/
+    z-index: 10;
+    display: flex;
+    flex-direction:column;
+    }
+     .links-nav {
+        flex-direction: column; /* Enllaços un sota l'altre [25] */
+        width: 100%;
+        gap: 20px;
+
+    }
+}
