@@ -9,6 +9,8 @@ src: url("fonts/Ringbearer Medium V2.woff2") format("woff2");
     --text-color: black;
     --underline-color: rgb(125, 73, 11);
     --hover-background-color: rgb(231, 174, 16);
+
+    --min-padding: 10px;
 }
 
 /*Prevents problems with the padding*/
@@ -24,13 +26,20 @@ body {
     font-family:'Ringbearer', serif;
 }
 
-h2{
-    margin: 10px 0 10px 0;
-    padding: 0;
+h2 {
+    margin: 20px 5px 20px 5px;
+    padding: 0px;
     text-align: center;
+    font-size: 30px;
+}
+
+h3 {
+    padding: var(--min-padding);
+    font-size: 25px;
 }
 
 p {
+    padding: var(--min-padding);
     text-align: justify;
 }
 
@@ -93,35 +102,37 @@ p {
 
 
 /*Section about the creator of the game*/
-
-
 .container-creator {
     background-color: darkgrey;
     display: flex;
-    flex-direction: row;
     align-items: end;
-    text-align: right;
+    justify-content: right;
+
 }
 
-.container-creator section {
+.container-creator section, p {
     background-color: blanchedalmond;
     display: flexbox;
     justify-content: flex-end;
-    width: 400px;
+    text-align: right;
+    width: 510px;
 }
 
 .socialmedia{
     background-color: brown;
     display: flex;
+    justify-content: right;
+    padding: var(--min-padding);
 }
 
 .socialmedia img{
-    padding-left: 5px;
-    height: 20px;
+    padding-left: 10px;
+    height: 25px;
 }
 
 .creatorphoto {
     background-color: blueviolet;
+    margin: 0 40px 0 20px;
     height: 330px;
     align-content: center;
 }
