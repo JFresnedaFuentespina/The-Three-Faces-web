@@ -118,6 +118,15 @@ p {
     width: 510px;
 }
 
+.container-text-over-board {
+    position: relative;
+}
+
+.container-text-over-board img{
+    height: 200px;
+    width: 520px;
+}
+
 .socialmedia{
     background-color: brown;
     display: flex;
