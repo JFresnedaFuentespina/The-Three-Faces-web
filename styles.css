@@ -79,3 +79,30 @@ body {
 
     }
 }
+
+main{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: bisque;
+    height: 400px;
+    align-items: center;
+    border: solid;
+    border-width: 3px;
+
+}
+
+.sinopsis{
+    background-color: rgb(216, 167, 43);
+    width: 800px;
+    border: solid;
+    height: 350px;
+
+
+}
+.cont-audiovisual{
+    background-color: burlywood;
+    width: 600px;
+    border: solid;
+    height: 350px;
+}
