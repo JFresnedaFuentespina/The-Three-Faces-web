@@ -122,9 +122,14 @@ p {
 
 }
 
-.container-creator section, p {
+.container-creator section {
     display: flexbox;
     justify-content: flex-end;
+    text-align: right;
+    
+}
+
+.text-creator {
     text-align: right;
     width: 510px;
 }
