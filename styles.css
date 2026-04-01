@@ -9,6 +9,7 @@ src: url("fonts/Ringbearer Medium V2.woff2") format("woff2");
     --text-color: black;
     --underline-color: rgb(125, 73, 11);
     --hover-background-color: rgb(231, 174, 16);
+    --min-padding: 10px;
 }
 
 /*Prevents problems with the padding*/
@@ -22,6 +23,21 @@ src: url("fonts/Ringbearer Medium V2.woff2") format("woff2");
 body {
     margin: 0;
     font-family:'Ringbearer', serif;
+}
+h2 {
+    margin: 20px 5px 20px 5px;
+    padding: 0px;
+    text-align: center;
+    font-size: 30px;
+}
+h3 {
+    padding: var(--min-padding);
+    font-size: 25px;
+}
+p {
+    padding: var(--min-padding);
+    text-align: justify;
+
 }
 
 .navbar {
@@ -81,15 +97,17 @@ body {
 }
 
 main{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around;
+    
     background-color: bisque;
-    height: 400px;
-    align-items: center;
+    height: 500px;
     border: solid;
     border-width: 3px;
 
+}
+.about-the-game{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .sinopsis{
@@ -97,9 +115,13 @@ main{
     width: 800px;
     border: solid;
     height: 350px;
-
-
+    
 }
+
+.sinopsis div{
+    display: flex;
+}
+
 .cont-audiovisual{
     background-color: burlywood;
     width: 600px;
