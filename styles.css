@@ -1,7 +1,7 @@
-@font-face {
+/*@font-face {
 font-family:"Ringbearer";
 src: url("fonts/Ringbearer Medium V2.woff2") format("woff2");
-}
+}*/
 
 /*Variable colors*/
 :root {
@@ -20,17 +20,18 @@ src: url("fonts/Ringbearer Medium V2.woff2") format("woff2");
     box-sizing:border-box;
 }
 
-
 body {
     margin: 0;
     font-family:'Ringbearer', serif;
 }
 
 h2 {
-    margin: 20px 5px 20px 5px;
-    padding: 0px;
+    margin: 20px 0px 20px 0px;
+    padding: 15px 0 0px 0;
     text-align: center;
     font-size: 30px;
+    background-color: var(--bg-color-gold);
+    height: 60px;
 }
 
 h3 {
@@ -54,64 +55,6 @@ p {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
-
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--bg-color-gold);
-    color: var(--text-color);
-    overflow: hidden;
-    border-bottom: 1px solid var(--underline-color);
-}
-
-.links-nav{
-    display: flex;
-    gap: 50px;
-    list-style: none;
-}
-
-.navbar .logo-navbar{
-    margin-right: auto;
-
-}
-
-.links-nav a{
-    display: flex;
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 0.2em 0.3em;
-    transition: var(--underline-color) 0.3 ease;
-}
-
-.links-nav a:hover {
-    color:var(--text-color);
-    text-decoration: underline;
-    background-color: var(--hover-background-color);
-    transition: background-color 0.3s ease;
-
-}
-
-@media screen and (max-width: 768px){
-    nav{
-    position: fixed;  /*Element doesn't move when page scolss*/
-    top: 0;
-    right: 0;
-    height:100vh; /*the elements height will be 100% of the visible area of the browser window height*/
-    width: min(15em, 100%); /*for elemtns to be seen properly on smaller screens*/
-    z-index: 10;
-    display: flex;
-    flex-direction:column;
-    }
-     .links-nav {
-        flex-direction: column; /* Enllaços un sota l'altre [25] */
-        width: 100%;
-        gap: 20px;
-
-    }
-}
-
 
 
 /*Section about the creator of the game*/
@@ -156,8 +99,15 @@ p {
     height: 330px;
     align-content: center;
 }
-.creatorphoto img{
+.photoJesus{
     padding: 0px 20px 0px 20px;
     border-radius: 50%;
     height: 300px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.photoJesus:hover{
+    transform: scale(1.2);
+    transition: .2s;
+        z-index: 1000;
 }
