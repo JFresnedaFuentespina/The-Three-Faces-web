@@ -1,7 +1,8 @@
 @font-face {
-font-family:"Ringbearer";
-src: url("fonts/Ringbearer Medium V2.woff2") format("woff2");
+    font-family: "Ringbearer"; 
+    src: url("fonts/Ringbearer Medium V2.woff2") format("woff2");
 }
+
 
 /*Variable colors*/
 :root {
