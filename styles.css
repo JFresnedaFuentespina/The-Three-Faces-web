@@ -334,6 +334,25 @@ p {
     z-index: 1000;
 }
 
+/*Footer section*/
+footer{
+    padding: 40px;
+    text-align: center;
+    background: #000;
+    border-top: 1px solid #333;
+}
+
+.socialmedia-icons{
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.socialmedia-icons a{
+    color: var(--color-gold);
+    margin: 0 10px;
+    text-decoration: none;
+}
+
 /*Responsive*/
 @media (max-width: 880px){
     .navbar{
