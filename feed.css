@@ -1,0 +1,44 @@
+
+body{
+  background-color: rgb(0, 0, 0);
+
+}
+th, td {
+  padding: 5px;
+  padding-bottom: 20px;
+  color:goldenrod
+  
+}
+
+.taulaRecords{
+  align-self: center;
+}
+
+.comentarioContainer{
+  display:flex;
+  padding:1em;
+  border-style: double;
+  border-color: goldenrod;
+  color:goldenrod;
+}
+
+.form{
+  display: flex;
+  padding: 1em;
+  color:goldenrod;
+}
+
+.tituloForm{
+  color:goldenrod;
+}
+
+.submitButton{
+  background-color: goldenrod;
+  border-color: black;
+  font-size: 15px;
+}
+
+.submitButton :hover{
+  cursor: pointer;
+
+}
