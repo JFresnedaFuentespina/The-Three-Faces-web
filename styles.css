@@ -212,19 +212,10 @@ p {
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
-    border: 1px dashed var(--color-gold);
 }
 
 .image-placeholder img{
     height: 265px;
-}
-
-    /*Common enemies section*/
-.enemy-card{
-    min-width: 250px;
-    background-color: var(--bg-color-dark);
-    padding: 15px;
-    border-radius: 8px;
 }
 
     /*Relic grid*/
