@@ -8,96 +8,289 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Three Faces</title>
     <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <header>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="index.html" class="navbar-logo">
-                <img src="Resources-T3F-WEB/Images/Sprites/logo-kidneygames-png.png" alt="Kidney Games">
-            </a>
-            <button class="navbar-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="index.html" class="navbar-logo">
+                    <img src="Resources-T3F-WEB/Images/Sprites/logo-kidneygames-png.png" alt="Kidney Games">
+                </a>
 
-            <ul class="navbar-menu">
+                <button class="navbar-toggle" id="mobile-menu">
+                <i class="fa fa-bars"></i> 
+                </button>
 
-        <li class="Navbar-link"><a href="#">HOME</a></li>
-        <li class="Navbar-link"><a href="#">LORE</a></li>
-        <li class="Navbar-link"><a target="_blank" href="diario.html">DIARIO</a></li>
-        <li class="Navbar-link"><a href="#">DEV.BLOG</a></li>
-        <li class="Navbar-link"><a target="_blank" href="feed.html">FEED</a></li>
-        <li class="Navbar-link"><a href="#">SUPPORT</a></li>
-        <i class="fa fa-bars"></i>
-    </ul>
-</div>
-</nav>
-</header>
-            
-    <body>       
-        
-        <section class="cover-container">
-            <section class="cover-title">
-            </section>
+                <ul class="navbar-menu">
+
+                    <li class="Navbar-link"><a href="#">HOME</a></li>
+                    <li class="Navbar-link"><a href="#">LORE</a></li>
+                    <li class="Navbar-link"><a href="#">DIARIO</a></li>
+                    <li class="Navbar-link"><a href="#">DEV.BLOG</a></li>
+                    <li class="Navbar-link"><a href="feed.html">FEED</a></li>
+                    <li class="Navbar-link"><a href="#">SUPPORT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>      
+    <section class="cover-container">
+        <section class="cover-title">
+        </section>
+    </section>
+
+    <main>
+        <!--Sinopsis/Lore section-->
+        <section id="lore" class="content-section">
+            <h2>SINOPSIS</h2>
+            <div class="container-flex">
+                <div class="text-content">
+                    <p>
+                        En un mundo donde el destino se decide con un simple lanzamiento,
+                        existen tres antiguas deidades que rigen el equilibrio del azar: Cara,
+                        Cruz y Canto. Juntas mantienen la balanza entre el orden y el caos,
+                        la materia y el espíritu, lo tangible y lo etéreo. Pero hace tiempo,
+                        Canto desapareció. Sin su presencia, Cara y Cruz entraron en guerra eterna,
+                        arrastrando al mundo a un ciclo de cambios impredecibles. Los humanos
+                        quedaron atrapados entre realidades: mitad vivos, mitad fantasmas,
+                        sin pertenecer a ningún lado. Tú eres uno de ellos, un alma dividida que
+                        porta la moneda original, reliquia creada por las tres deidades. Con cada
+                        lanzamiento, invocas su poder, cambiando entre cuerpo y espíritu.
+                        Tu misión es restaurar el equilibrio, derrotando primero a Cara, guardiana
+                        del mundo material, luego a Cruz, soberana del mundo espectral, y finalmente
+                        enfrentarte a Canto, el azar absoluto, donde toda elección pierde sentido.
+                    </p>
+                </div>
+                <div>
+                    <!--Imagen temporal de prueba-->
+                    <img src="Img/Esqueleto.png" alt="Portada del juego">
+                </div>
+            </div>
         </section>
 
-        <!--Sinopsis del juego + contenido audiovisual-->
-        <main>
-            //Contenido principal página
-        </main>
+        <!--Characters lore section-->
+        <section id="bestiario" class="content-section">
+            <h2>BESTIARIO</h2>
+            
+            <h3>EL PROTAGONISTA</h3>
+            <div class="bestiary-grid dual-character">
+                <div class="character-card">
+                    <div class="image-placeholder">
+                        <img src="Img/Character/Esqueleto.png" alt="Personaje principal versión Humano">
+                    </div>
+                    <h4>Parte Humana</h4>
+                    <p>
+                        Era un tipo normal con una vida tranquila. Cuando estalló la
+                        guerra entre Cara y Cruz, tuvo la suerte o la desgracia de
+                        encontrarse con una antigua reliquia: la moneda original. Ese
+                        descubrimiento cambió su destino, ahora es capaz de usar el poder
+                        de la moneda y hará lo que sea necesario.
+                    </p>
+                </div>
+                <div class="character-card">
+                    <div class="image-placeholder">
+                        <img src="Img/Character/Fantasma.png" alt="Personaje principal versión Fantasma">
+                    </div>
+                    <h4>Parte Fantasma</h4>
+                    <p>
+                        Es el espíritu vinculado a la moneda original. Su misión es unirse
+                        a quien decida empuñar la moneda para restaurar el balance perdido.
+                        En esta forma, el protagonista canaliza su poder, accediendo a
+                        habilidades que van más allá del mundo físico.
+                    </p>
+                </div>
+            </div>
 
-        <!--En el artículo se escribirá información sobre el autor-->
-        <article>
-            <h2>CREADOR</h2>
-            <section class="container-creator">
-                <section>
-                    <div class="container-text-over-board">
-                        <img class="board" src="Img/boardForText/boardSmallPaper.png" alt="Pizarra texto">
-                        <div class="text-top">
-                            <h3>Jesús Fresneda</h3>
-                            <p class="text-creator">
-                                ¡Hola! Soy Jesús, el desarrollador detrás de The Three Faces, un roguelike
-                                en el que todo gira en torno a una idea sencilla: lanzar una moneda para
-                                cambiar entre dos formas diferentes.
-                                Quería probar algo que fuera fácil de aprender pero que ofreciera muchas posibilidades,
-                                y este proyecto es justo eso.
-                                Espero que os guste el juego tanto como a mí me está gustando crearlo.
-                            </p>
-                        
-                            <div class="socialmedia">
-                                <a href="https://www.instagram.com/thethreefacesvideogame?igsh=bjFubXdsaG00N2V0">
-                                    <img src="Img/logoinstagram.png" alt="Imagen Instagram">
-                                </a>
-                                <br>
-                                <a href="https://github.com/JFresnedaFuentespina/Testing-The-Three-Faces">
-                                    <img src="Img/logogithub.png" alt="Imagen GitHub">
-                                </a>
-                            </div>
+            <h3>LOS JEFES</h3>
+            <div class="bestiary-grid">
+                <div class="character-card">
+                    <div class="image-placeholder">
+                        <img src="Img/enemies/cara-boss-cara.png" alt="Jefe Cara">
+                    </div>
+                    <h4>Cara</h4>
+                    <p>
+                        El Guardián del mundo material. Dios del orden y la materia.
+                        Representa la fuerza física. Sus ataques son directos y contundentes.
+                    </p>
+                </div>
+                <div class="character-card">
+                    <div class="image-placeholder">
+                        <img src="Img/enemies/cara-boss-cruz.png" alt="Jefe Cruz">
+                    </div>
+                    <h4>Cruz</h4>
+                    <p>
+                        La Soberana del mundo espectral. Entidad del caos espiritual y
+                        lo intangible. Es rápida e impredecible. Su naturaleza etérea hace
+                        que el enfrentamiento sea dinámico.
+                    </p>
+                </div>
+                <div class="character-card">
+                    <div class="image-placeholder">
+                        <img src="Img/enemies/cara-boss-canto.png" alt="Jefe Canto">
+                    </div>
+                    <h4>Canto</h4>
+                    <p>
+                        El azar absoluto. El dios perdido. Combina elementos de Cara y
+                        Cruz, alternando entre ataques físicos y espectrales.
+                    </p>
+                </div>
+            </div>
+
+            <h3>ENEMIGOS COMUNES</h3>
+            <div class="bestiary-grid">
+                <div class="character-card">
+                    <div class="image-placeholder">
+                        <img src="Img/enemies/zombie-the3faces.png" alt="Zombie A">
+                    </div>
+                    <h4>Zombie</h4>
+                    <p>
+                        Criaturas ligadas al mundo material. Se acercan al jugador
+                        de forma constante para atacar cuerpo a cuerpo.
+                    </p>
+                </div>
+                <div class="character-card">
+                    <div class="image-placeholder">
+                        <img src="Img/enemies/fantasma-the3faces.png" alt="Fantasma A">
+                    </div>
+                    
+                    <h4>Fantasma</h4>
+                    <p>
+                        Entidades del plano espectral. Atacan a distancia y pueden
+                        desplazarse de forma impredecible.
+                    </p>
+                </div>
+            </div>
+
+            <h3>RELICARIOS</h3>
+            <div class="relic-grid">
+                <div class="relic-item">
+                    <div class="relic-img">
+                        <img src="Img/Items/bomb.png" alt="Bomba">
+                        <div class="relic-description">
+                            Cuando uses la moneda, generas una explosión alrededor
+                            tuya que hace mucho daño a los enemigos.
                         </div>
                     </div>
-                </section>
-                <div class="creatorphoto">
-                    <img src="Img/jesus_fresneda.jpg" class="photoJesus" alt="Fotografía del desarrollador del juego">
+                    <span>Bomba</span>
                 </div>
-            </section>
-        </article>
 
-        <!--Sección de los personajes y enemigos del juego-->
-        <section>
-            
+                <div class="relic-item">
+                    <div class="relic-img">
+                        <img src="Img/Items/skull.png" alt="Calavera">
+                        <div class="relic-description">
+                            Aumenta mucho tu daño pero reduce tu vida máxima.
+                        </div>
+                    </div>
+                    <span>Calavera</span>
+                </div>
+
+                <div class="relic-item">
+                    <div class="relic-img">
+                        <img src="Img/Items/heart.png" alt="Corazón rojo">
+                        <div class="relic-description">
+                            Te cura por completo y te añade un corazón rojo adicional.
+                        </div>
+                    </div>
+                    <span>Corazón rojo</span>
+                </div>
+
+                <div class="relic-item">
+                    <div class="relic-img">
+                        <img src="Img/Items/shield.png" alt="Escudo">
+                        <div class="relic-description">
+                            En la forma humana, pasas a llevar un escudo en la otra mano.
+                            Al usar clic derecho, podrás bloquear ataques de los enemigos.
+                        </div>
+                    </div>
+                    <span>Escudo</span>
+                </div>
+
+                <div class="relic-item">
+                    <div class="relic-img">
+                        <img src="Img/Items/star.png" alt="Estrella">
+                        <div class="relic-description">
+                            Aumenta todas tus estadísticas (Ataque, velocidad e intervalo de
+                            ataque).
+                        </div>
+                    </div>
+                    <span>Estrella</span>
+                </div>
+
+                <div class="relic-item">
+                    <div class="relic-img">
+                        <img src="Img/Items/yellow_arrow.png" alt="Incremento amarillo">
+                        <div class="relic-description">
+                            Aumenta el intervalo de ataque.
+                        </div>
+                    </div>
+                    <span>Incremento amarillo</span>
+                </div>
+
+                <div class="relic-item">
+                    <div class="relic-img">
+                        <img src="Img/Items/blue_arrow.png" alt="Incremento azul">
+                        <div class="relic-description">
+                            Aumenta tu velocidad de movimiento.
+                        </div>
+                    </div>
+                    <span>Incremento azul</span>
+                </div>
+
+                <div class="relic-item">
+                    <div class="relic-img">
+                        <img src="Img/Items/red_arrow.png" alt="Incremento rojo">
+                        <div class="relic-description">
+                            Aumenta tu daño.
+                        </div>
+                    </div>
+                    <span>Incremento rojo</span>
+                </div>
+
+                <div class="relic-item">
+                    <div class="relic-img">
+                        <img src="Img/Items/blue_pill.png" alt="Píldora azul">
+                        <div class="relic-description">
+                            Corazón extra temporal. Si te golpean lo pierdes.
+                        </div>
+                    </div>
+                    <span>Píldora azul</span>
+                </div>
+
+                <div class="relic-item">
+                    <div class="relic-img">
+                        <img src="Img/Items/green_potion.png" alt="Poción verde">
+                        <div class="relic-description">
+                            Tus ataques aplican envenenamiento al golpear a los enemigos.
+                        </div>
+                    </div>
+                    <span>Poción verde</span>
+                </div>
+
+                <div class="relic-item">
+                    <div class="relic-img">
+                        <img src="Img/Items/hourglass.png" alt="Reloj de arena">
+                        <div class="relic-description">
+                            Al girar la moneda, detienes a los enemigos que haya en la habitación.
+                        </div>
+                    </div>
+                    <span>Reloj de arena</span>
+                </div>
+            </div>
         </section>
+    </main>
 
-        <footer>
-            <!--Aquí irán los resultados de las partidas de los usuarios-->
-            <section>
-                
-            </section>
-        </footer>
+    <footer>
+        <div class="footer-content">
+            <span>&copy; 2026 Kidney Games. All rights reserved.</span>
+            <div class="socialmedia-icons">
+                <a href="https://www.instagram.com/thethreefacesvideogame?igsh=bjFubXdsaG00N2V0" target="_blank" rel="noopener" class="fa fa-instagram"></a>
+                <a href="https://github.com/JFresnedaFuentespina/Testing-The-Three-Faces" target="_blank" rel="noopener" class="fa fa-github"></a>
+            </div>
+        </div>
+    </footer>
 
-        <script src="javaScript/script.js"></script>
+    <script src="javaScript/script.js"></script>
 </body>
 
 </html>
