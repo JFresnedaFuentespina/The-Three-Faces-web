@@ -320,7 +320,7 @@ p {
 
 .dev-socials{
     padding: 10px;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .dev-socials a{
@@ -337,6 +337,7 @@ p {
 
 /*Footer section*/
 footer{
+    font-family: 'Times New Roman', Times, serif;
     padding: 40px;
     text-align: center;
     background: #000;
@@ -406,7 +407,21 @@ footer{
         color: var(--text-color);
     }
 
+    /* Relic section on Bestiario*/
     .relic-grid{
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Dev section */
+    .dev-photo-large{
+        flex: 1 1 100%;
+    }
+
+    .dev-name{
+        text-align: center !important;
+    }
+
+    .dev-socials{
+        text-align: center;
     }
 }
