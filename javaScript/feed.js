@@ -57,6 +57,7 @@ document
       if (respuesta.ok) {
         alert("Comentario enviado con exito!");
         document.getElementById("commentForm").reset();
+        cargarComentarios();
       } else {
         console.error("Error en la respuesta del servidor.");
       }

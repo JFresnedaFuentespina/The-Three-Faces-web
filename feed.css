@@ -12,11 +12,13 @@ th, td {
 
 .taulaRecords{
   align-self: center;
+  margin: 2em;
 }
 
 .comentarioContainer{
   display:flex;
-  padding:1em;
+  padding:2em;
+  margin:1em;
   border-style: double;
   border-color: goldenrod;
   color:goldenrod;
@@ -36,9 +38,20 @@ th, td {
   background-color: goldenrod;
   border-color: black;
   font-size: 15px;
+  font-weight: 300;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  border-bottom-color: aliceblue;
+  box-shadow: 0 4px 12px 0 rgb(243, 185, 38);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+
 }
 
-.submitButton :hover{
+.submitButton:hover{
   cursor: pointer;
+  background-color: rgb(135, 100, 11);
+  letter-spacing: 0.1em;
 
 }
+
