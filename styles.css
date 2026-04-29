@@ -75,6 +75,7 @@ p {
     transform: translate(-50%, -50%);
 }
 
+/* -- NAVBAR SECTION -- */
 .navbar{
     display: flex;
     align-items:center;
@@ -170,7 +171,7 @@ p {
 }
 
 
-/* -- Section game's lore -- */
+/* -- SECTION GAME'S LORE -- */
 .content-section{
     padding: 60px 10%;
     min-height: 400px;
@@ -189,7 +190,7 @@ p {
     min-width: 300px;
 }
 
-/*Bestiary cards*/
+    /* Bestiary cards */
 .bestiary-grid{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -335,7 +336,8 @@ p {
 }
 
 
-/*Footer section*/
+
+/* -- FOOTER SECTION -- */
 footer{
     font-family: 'Times New Roman', Times, serif;
     padding: 40px;
@@ -355,7 +357,7 @@ footer{
     text-decoration: none;
 }
 
-/*Responsive*/
+/* -- RESPONSIVE -- */
 @media (max-width: 780px){
     .navbar{
         backdrop-filter: none;
