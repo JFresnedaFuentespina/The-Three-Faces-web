@@ -348,7 +348,9 @@ p {
 }
 
 .web-dev-card{
-    height: 400px;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
     background: #111;
     padding: 25px;
     border-left: 4px solid var(--color-gold);
@@ -361,7 +363,7 @@ p {
 }
 
 .web-dev-name{
-    height: 320px;
+    flex-grow: 1;
 }
 
 .web-dev-card h4{
@@ -378,7 +380,8 @@ p {
 }
 
 .dev-socials-small{
-    margin-top: 15px;
+    margin-top: auto;
+    padding-top: 15px;
 }
 
 .dev-socials-small a{
