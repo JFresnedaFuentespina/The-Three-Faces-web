@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -7,17 +7,16 @@
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Three Faces</title>
-  <link href="diario.css" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
-  <link href="feed.css" rel="stylesheet">
+  <link href="../styles.css" rel="stylesheet">
+  <link href="../css/feed.css" rel="stylesheet">
 </head>
 
 <body>
   <header>
     <nav class="navbar">
       <div class="navbar-container">
-        <a href="index.html" class="navbar-logo">
-          <img src="Resources-T3F-WEB/Images/Sprites/logo-kidneygames-png.png" alt="Kidney Games">
+        <a href="../index.html" class="navbar-logo">
+          <img src="../Resources-T3F-WEB/Images/Sprites/logo-kidneygames-png.png" alt="Kidney Games">
         </a>
         <button class="navbar-toggle">
           <span class="bar"></span>
@@ -27,9 +26,9 @@
 
         <ul class="navbar-menu">
 
-          <li class="Navbar-link"><a href="index.html">THE THREE FACES</a></li>
-          <li class="Navbar-link"><a href="#">DEV.BLOG</a></li>
-          <li class="Navbar-link"><a href="#">FEED</a></li>
+          <li class="Navbar-link"><a href="../index.html">THE THREE FACES</a></li>
+          <li class="Navbar-link"><a href="../html/devBlog.html">DEV.BLOG</a></li>
+          <li class="Navbar-link"><a href="feed.html">FEED</a></li>
           <li class="Navbar-link"><a href="#">SUPPORT</a></li>
           <i class="fa fa-bars"></i>
         </ul>
@@ -51,9 +50,8 @@
             <!-- Los datos se inyectarán aquí con JavaScript -->
         </tbody>
     </table>
-</section>
+  </section>
 
-  <script src="javaScript/script.js"></script>
 
   <section class="form">
     <div class="tituloForm">
@@ -71,25 +69,26 @@
             <button type="submit" class="submitButton">Enviar comentario</button>
         </form>
     </div>
-</section>
+  </section>
 
-<section class="containerComentarios">
-  <h4>Mira lo que los otros estan diciendo!</h4>
-  <table class="tablaComentarios">
-    <thead>
-      <tr>
-        <th>Usuario</th>
-        <th>Comentario</th>
-      </tr>
-    </thead>
-    <tbody id="verComentarios">
+  <section class="containerComentarios">
+    <h4>Mira lo que los otros estan diciendo!</h4>
+    <table class="tablaComentarios">
+      <thead>
+        <tr>
+          <th>Usuario</th>
+          <th>Comentario</th>
+        </tr>
+      </thead>
+      <tbody id="verComentarios">
 
-    </tbody>
+      </tbody>
 
-  </table>
+    </table>
 
 
-</section>
+  </section>
+  <script src="../javaScript/script.js"></script>
 </body>
 
 </html>
