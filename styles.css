@@ -211,52 +211,6 @@ p {
 
 }
 
-@media (max-width: 880px){
-    .navbar{
-        backdrop-filter: none;
-    }
-
-
-    .navbar-container .navbar-menu{
-        display:none;
-        flex-direction:column;
-        align-items: flex-start;
-        gap: 1.7rem !important;
-        position:absolute;
-        height:100vh;
-        width: 250px;
-        top:0;
-        right:0;
-        padding: 5rem 1.5rem;
-        background-color: transparent;
-        backdrop-filter: blur(10px);
-        color: var(--bg-color-gold);
-    }
-
-    .cover-container{
-        min-width: 75vh;
-    }
-
-    .navbar-container .navbar-menu.active{
-        display: flex;
-    }
-
-    .navbar-toggle{
-        display:block;
-        z-index:999;
-    }
-
-    .navbar-toggle.active .bar:nth-child(2) {
-        opacity: 0; /*bar middle invisible*/
-    }
-    .navbar-toggle.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .navbar-toggle.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-}
-
 /*Background imatge*/
 
 .cover-container {
@@ -512,6 +466,52 @@ footer{
 }
 
 /* -- RESPONSIVE -- */
+@media (max-width: 880px){
+    .navbar{
+        backdrop-filter: none;
+    }
+
+
+    .navbar-container .navbar-menu{
+        display:none;
+        flex-direction:column;
+        align-items: flex-start;
+        gap: 1.7rem !important;
+        position:absolute;
+        height:100vh;
+        width: 250px;
+        top:0;
+        right:0;
+        padding: 5rem 1.5rem;
+        background-color: transparent;
+        backdrop-filter: blur(10px);
+        color: var(--bg-color-gold);
+    }
+
+    .cover-container{
+        min-width: 75vh;
+    }
+
+    .navbar-container .navbar-menu.active{
+        display: flex;
+    }
+
+    .navbar-toggle{
+        display:block;
+        z-index:999;
+    }
+
+    .navbar-toggle.active .bar:nth-child(2) {
+        opacity: 0; /*bar middle invisible*/
+    }
+    .navbar-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .navbar-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
 @media (max-width: 780px){
     .navbar{
         backdrop-filter: none;
