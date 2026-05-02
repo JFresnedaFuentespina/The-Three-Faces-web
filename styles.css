@@ -68,8 +68,7 @@
     background-repeat: no-repeat;
     background-position: center;
 
-    /*Glows if someone grabs it*/
-    border-radius: 4px;
+    cursor: default !important;
 }
 
 ::-webkit-scrollbar-thumb:hover{
