@@ -1,6 +1,7 @@
+
 async function mostrarRankings() {
   const api_token =
-    "LIJOekjwbGP3XzDPPye8Na8tWJpONhM7s9c2YtYwA2Eab9yj4Omqe63u68TO";
+    "pHJNhm719MN5LCVqE839IOse0qvlbL1IBXndZmAWoJfiPXZFQHmgNQrzUHYS";
   const url = `https://phpstack-1076337-5399863.cloudwaysapps.com/api/classification/${api_token}`;
 
   try {
@@ -26,53 +27,52 @@ async function mostrarRankings() {
 
 //Gestió formulari comentaris
 
+
 document
-  .getElementById("commentForm")
-  .addEventListener("submit", async (event) => {
+  .getElementById("commentForm").addEventListener("submit", "DOMContentLoaded", async (event) => {
     event.preventDefault(); // Evita recàrrega
 
     const nombre = document.getElementById("nombre").value;
     const comentario = document.getElementById("comentario").value;
+  const api_token = "pHJNhm719MN5LCVqE839IOse0qvlbL1IBXndZmAWoJfiPXZFQHmgNQrzUHYS";
+      
 
-    const datosAEnviar = {
-      api_token: "LIJOekjwbGP3XzDPPye8Na8tWJpONhM7s9c2YtYwA2Eab9yj4Omqe63u68TO",
-      name: nombre,
-      content: comentario,
-    };
+     const datosAEnviar = {
+        api_token: api_token,
+        name: nombre,
+        content: comentario,
+      };
 
-    //Gestión errores
+      try {
+        const respuesta = await fetch(
+          `https://phpstack-1076337-5399863.cloudwaysapps.com/api/posts/publicar`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(datosAEnviar), 
+          }
+        );
 
-    try {
-      const respuesta = await fetch(
-        `https://phpstack-1076337-5399863.cloudwaysapps.com/api/posts/publicar`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json", //etiqueta formato json
-          },
-          body: JSON.stringify(datosAEnviar), // datosAEnviar debe incluir el api_token, pasar objeto a string para server
-        },
-      );
-
-      if (respuesta.ok) {
-        alert("Comentario enviado con exito!");
-        document.getElementById("commentForm").reset();
-        cargarComentarios();
-      } else {
-        console.error("Error en la respuesta del servidor.");
+        if (respuesta.ok) {
+          alert("Comentario enviado con exito!");
+          formulari.reset();
+          cargarComentarios(); 
+        } else {
+          console.error("Error en la respuesta del servidor.");
+        }
+      } catch (error) {
+        console.error("Error: ", error); 
       }
-    } catch (error) {
-      console.error("Error: ", error);
-    }
-  });
+    });
 
-mostrarRankings();
-cargarComentarios();
 
 async function cargarComentarios() {
   const api_token =
-    "LIJOekjwbGP3XzDPPye8Na8tWJpONhM7s9c2YtYwA2Eab9yj4Omqe63u68TO";
-  const url = `https://phpstack-1076337-5399863.cloudwaysapps.com/api/classification/${api_token}`;
+    "pHJNhm719MN5LCVqE839IOse0qvlbL1IBXndZmAWoJfiPXZFQHmgNQrzUHYS";
+  const url = `https://phpstack-1076337-5399863.cloudwaysapps.com/api/posts/${api_token}`;
+
 
   try {
     const respuesta = await fetch(url);
@@ -87,9 +87,52 @@ async function cargarComentarios() {
         <td>${post.name}</td>
         <td>${post.content}</td>
         `;
-      container.appendChild(fila); //crear nuevo elemento, nuevo hijo 
+      container.appendChild(fila);
     });
   } catch (error) {
     console.error("Error. Algo ha salido mal.", error);
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {const url_base = "https://phpstack-1076337-5399863.cloudwaysapps.com";
+const api_token = "pHJNhm719MN5LCVqE839IOse0qvlbL1IBXndZmAWoJfiPXZFQHmgNQrzUHYS";
+
+  const formulari = document.getElementById("commentForm");
+  
+  mostrarRankings();
+  cargarComentarios();
+
+  if(formulari){
+    formulari.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const comentarios = document.getElementById("comentario").value;
+      
+      const datosAEnviar = {
+        api_token: "pHJNhm719MN5LCVqE839IOse0qvlbL1IBXndZmAWoJfiPXZFQHmgNQrzUHYS",
+        name: nombre,
+        content: comentario
+      };
+
+  try {
+        const respuesta = await fetch (
+          `https://phpstack-1076337-5399863.cloudwaysapps.com/POST/api/comments`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(datosAEnviar),
+          }
+        );
+
+        if (respuesta.ok) {
+          alert("Comentario enviado con exito!");
+          formulari.reset();
+          cargarComentarios(); // Refrescar lista comentaris
+        }
+      } catch (error) {
+        console.error("Error en l'enviament: ", error);
+      }
+    });
+  }
+});
