@@ -168,14 +168,15 @@ p {
     border-radius: 10px;
 }
 
-.navbar-container .navbar-menu{
+.navbar-menu{
     display: flex;
     text-align:center;
+    align-items: center;
     gap:1.5rem;
     list-style:none;
 }
 
-.navbar-container .navbar-menu li a {
+.navbar-menu li a {
     text-decoration:none;
     color:var(--text-color);
     font-size:var(--lletres-navbar);
@@ -224,7 +225,7 @@ p {
     padding: 0;
 }
 
-#coin-human{
+#coin-img{
     width: 45px;
     height: 45px;
     transition: transform 0.3s ease;
