@@ -210,6 +210,31 @@ p {
 
 }
 
+/* -- COIN BUTTON -- */
+.theme-toggle-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#theme-toggle{
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#coin-human{
+    width: 45px;
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover #coin-img {
+    transform: scale(1.1) rotate(15deg);
+}
+
+
 /*Background imatge*/
 
 .cover-container {
@@ -516,6 +541,13 @@ footer{
         width:auto; 
         color: var(--text-color);
     }
+
+    .theme-toggle-item{
+        order: -1;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 780px){
@@ -567,6 +599,12 @@ footer{
         height:auto;  
         width:auto; 
         color: var(--text-color);
+    }
+
+    .theme-toggle-item{
+        order: -1;
+        margin-bottom: 20px;
+        width: 100%;
     }
 
     /* Relic section on Bestiario*/

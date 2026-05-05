@@ -7,4 +7,4 @@ navbarToggle.addEventListener('click', () => {
   navbarMenu.classList.toggle('active');
 
 
-})
+});
