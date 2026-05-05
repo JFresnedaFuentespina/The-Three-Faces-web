@@ -31,6 +31,10 @@ themeBtn.addEventListener('click', () => {
   flipSound.currentTime = 0;
   flipSound.play();
 
+  //Sound changes
+  flipSound.preservesPitch = false;
+  flipSound.playbackRate = 0.9 + Math.random() * 0.1;
+
   // Start animation
   coinWrapper.classList.add('toss-animation');
 
