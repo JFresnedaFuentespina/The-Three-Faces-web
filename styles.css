@@ -7,14 +7,58 @@
 /*Variable colors*/
 :root {
     --color-gold: rgb(249, 207, 19);
-    --bg-color-dark: #222;
+    --shadow-color-gold: rgb(248, 210, 41, 0.5);
+    --bg-color-brown: rgb(20, 9, 2);
     --text-color: rgb(248, 242, 242);
     --underline-color: rgb(125, 73, 11);
     --hover-background-color: rgb(212, 92, 0);
-    --dark-gb: #1a1a1a;
     --min-padding: 10px;
     /*Variable tamany fonts*/
     --lletres-navbar: 1.1rem;
+    --color-cocoa: rgb(45, 26, 12);
+    --color-cocoa2: rgb(45, 26, 12, 0.5);
+    --color-muted-bronze: rgb(74, 55, 33);
+}
+
+/* -- GHOST MODE COLORS -- */
+[data-theme="dark"]{
+    /*Main Highlights*/
+    --color-gold: #00f2ff;
+    --shadow-color-gold: rgba(0, 242, 255, 0.5);
+
+    /*Backgrounds*/
+    --bg-color-brown: #0d001a;
+    --color-cocoa: #1a0033;
+    --color-cocoa2: rgba(26, 0, 51, 0.7);
+    --color-muted-bronze: #2b0054;
+
+    /*Accents & Text*/
+    --text-color: #e0faff;
+    --underline-color: #b300ff;
+    --hover-background-color: #00ffaa;
+}
+
+[data-theme="dark"] .navbar{
+    background-color: #1a0033 !important;
+    border-bottom: 2px solid var(--color-gold);
+    box-shadow: 0 5px 20px var(--shadow-color-gold);
+}
+
+[data-theme="dark"] .navbar-menu li a{
+    color: var(--color-gold);
+}
+
+/*Ghost coin glows in dark mode*/
+[data-theme="dark"] #coin-img{
+    filter:drop-shadow(0 0 8px var(--color-gold));
+}
+
+[data-theme="dark"] .cover-container {
+    /* 160-180 degrees turns Gold into a bright Cyan */
+    filter: hue-rotate(160deg) brightness(1.2) saturate(2.5);
+    
+    /* Subtle glow in the color of the ghost */
+    filter: hue-rotate(160deg) brightness(1.2) saturate(2.5) drop-shadow(0 0 10px #00f2ff);
 }
 
 /*Prevents problems with the padding*/
@@ -58,8 +102,8 @@
 }
 
 ::-webkit-scrollbar-track{
-    background-color: var(--dark-gb);
-    border-left: 1px solid #333;
+    background-color: var(--color-cocoa2);
+    border-left: 1px solid var(--color-cocoa);
 }
 
 ::-webkit-scrollbar-thumb{
@@ -80,7 +124,7 @@
 body {
     margin: 0;
     font-family:'Ringbearer', serif;
-    background-color: #000;
+    background-color: var(--bg-color-brown);
     color: var(--text-color);
     overflow-x: hidden;
 }
@@ -137,7 +181,7 @@ p {
     width:100%;
     position: sticky; 
     top:0;
-    box-shadow: 0 10px 30px rgba(248, 210, 41, 0.5);
+    box-shadow: 0 10px 30px var(--shadow-color-gold);
     z-index:999; /*Navbar adalt de tots els elements*/
     color: var(--color-gold);
     background-color: var(--color-gold); 
@@ -148,7 +192,6 @@ p {
 
 .navbar-container{
     display:flex;
-    align-items:center;
     justify-content:space-between;
     width:100%;
     padding: 0 2rem;
@@ -156,6 +199,8 @@ p {
 }
 
 .navbar-logo{
+    display: flex;
+    align-items: center;
     font-size:large;
     color:white;
     text-decoration:none;
@@ -163,8 +208,7 @@ p {
 }
 
 .navbar-logo img{
-    max-width: 70px;
-    height: 20%;
+    max-height: 60px;
     border-radius: 10px;
 }
 
@@ -271,7 +315,7 @@ p {
 /*Background imatge*/
 
 .cover-container {
-    background-image:url("Resources-T3F-WEB/Images/Sprites/test%20logo%20the%20three%20faces.png");
+    background-image:url("Img/threeFacesImg.png");
 
     background-size: cover;  /*Cover adapta img a dins es container*/
     background-position: center;
@@ -309,7 +353,7 @@ p {
 }
 
 .character-card{
-    background: #222;
+    background: var(--color-cocoa);
     padding: 20px;
     border: 1px solid var(--color-gold);
     text-align: center;
@@ -318,8 +362,8 @@ p {
 
 .image-placeholder{
     width: 100%;
-    height: 270px;
-    background: #333;
+    height: 265px;
+    background: var(--color-muted-bronze);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -339,15 +383,15 @@ p {
 }
 
 .relic-item{
-    background: var(--bg-color-dark);
+    background: var(--color-cocoa);
     padding: 10px;
     text-align: center;
-    border: 1px solid #444;
+    border: 1px solid var(--color-gold);
 }
 
 .relic-img{
     height: 150px;
-    background: #333;
+    background: var(--color-muted-bronze);
     margin-bottom: 10px;
     position: relative;
     overflow: hidden;
@@ -392,7 +436,7 @@ p {
 
 /* -- DEV.BLOG SECTION -- */
 .main-developer-container{
-    background: rgba(34, 34, 34, 0.5);
+    background: var(--color-cocoa2);
     padding: 40px;
     border: 2px solid var(--color-gold);
     border-radius: 15px;
@@ -411,7 +455,7 @@ p {
     border: 4px solid var(--color-gold);
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 0 20px rgba(249, 207, 19, 0.3);
+    box-shadow: 0 0 20px var(--shadow-color-gold);
 }
 
 .dev-name{
@@ -461,7 +505,7 @@ p {
     display: flex;
     flex-direction: column;
     min-height: 400px;
-    background: #111;
+    background: var(--color-cocoa2);
     padding: 25px;
     border-left: 4px solid var(--color-gold);
     transition: transform 0.3 ease;
@@ -469,7 +513,7 @@ p {
 
 .web-dev-card:hover{
     transform: translateY(-5px);
-    background: #1a1a1a;
+    background: var(--color-muted-bronze);
 }
 
 .web-dev-name{
@@ -507,7 +551,7 @@ footer{
     font-family: 'Times New Roman', Times, serif;
     padding: 40px;
     text-align: center;
-    background: #000;
+    background: var(--bg-color-brown);
     border-top: 1px solid #333;
 }
 
