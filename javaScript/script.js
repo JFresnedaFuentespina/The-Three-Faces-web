@@ -18,11 +18,18 @@ const coinImg = document.getElementById('coin-img');
 const humanCoin = "Img/coins/moneda_cara.png";
 const ghostCoin = "Img/coins/moneda_cruz.png";
 
+const flipSound = new Audio('Sound/coinFlip.mp3');
+// Adjust volume
+flipSound.volume = 0.5;
+
 //Toggle on click
 themeBtn.addEventListener('click', () => {
   const currentTheme = document.documentElement.getAttribute('data-theme');
   const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  //setTheme(newTheme);
+  
+  //Sound effect
+  flipSound.currentTime = 0;
+  flipSound.play();
 
   // Start animation
   coinWrapper.classList.add('toss-animation');
