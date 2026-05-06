@@ -24,36 +24,44 @@ const flipSound = new Audio('../Sound/coinFlip.mp3');
 // Adjust volume
 flipSound.volume = 0.5;
 
-//Toggle on click
-themeBtn.addEventListener('click', () => {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+//Sync function: Update UI based on current theme
+function applyTheme(theme) {
+  if(theme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    if(coinImg) coinImg.src = ghostCoin;
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    if(coinImg) coinImg.src = humanCoin;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+
+  //Apply saved theme on page load
+  applyTheme(savedTheme);
+
+  //Toggle logic
+  themeBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    //Coin sound & animation logic
+    flipSound.currentTime = 0;
+    flipSound.playbackRate = 0.9 + Math.random() * 0.1;
+    flipSound.play();
+    coinWrapper.classList.add('toss-animation');
+
+    //Swap coin halfway animation
+    setTimeout(() => {
+      applyTheme(newTheme);
+      localStorage.setItem('theme', newTheme);
+    }, 300);
+
+    setTimeout(() => {
+      coinWrapper.classList.remove('toss-animation');
+    }, 600);
+  });
+
   
-  //Sound effect
-  flipSound.currentTime = 0;
-  flipSound.play();
-
-  //Sound changes
-  flipSound.preservesPitch = false;
-  flipSound.playbackRate = 0.9 + Math.random() * 0.1;
-
-  // Start animation
-  coinWrapper.classList.add('toss-animation');
-
-  //Swap coin image halfway of the flip
-  setTimeout(() =>{
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-
-    if(newTheme === 'dark'){
-      coinImg.src = ghostCoin;
-    } else {
-      coinImg.src = humanCoin;
-    }
-  }, 300); //300ms is half of 0.6s animation
-
-  //Remove class so we can trigger it again next time
-  setTimeout(() => {
-    coinWrapper.classList.remove('toss-animation');
-  }, 600);
 });
