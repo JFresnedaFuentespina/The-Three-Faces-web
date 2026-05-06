@@ -1,95 +1,103 @@
-async function mostrarRankings() {
-  const api_token =
-    "LIJOekjwbGP3XzDPPye8Na8tWJpONhM7s9c2YtYwA2Eab9yj4Omqe63u68TO";
-  const url = `https://phpstack-1076337-5399863.cloudwaysapps.com/api/classification/${api_token}`;
+document.addEventListener("DOMContentLoaded", () => {
+  
 
+  mostrarRankings();
+  cargarComentarios();
+
+  const formulari = document.getElementById("commentForm");
+
+
+  if (formulari) {
+    formulari.addEventListener("submit", async (event) => {
+      event.preventDefault(); // Evita la recàrrega nativa del formulari [5]
+
+      const nombre = document.getElementById("nombre").value;
+      const comentario = document.getElementById("comentario").value;
+
+      const datosAEnviar = {
+        api_token: "pHJNhm719MN5LCVqE839lOse0qvlbL1lBXndZmAWoJfiPXZFQHmgNQrzUHYS",
+        name: nombre,
+        content: comentario,
+      };
+
+      try {
+        const respuesta = await fetch(
+          `https://phpstack-1076337-5399863.cloudwaysapps.com/api/posts/publicar`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(datosAEnviar), // Passem l'objecte a text JSON [5]
+          }
+        );
+
+        if (respuesta.ok) {
+          alert("¡Comentario enviado con éxito!");
+          formulari.reset();
+          cargarComentarios(); 
+        } else {
+          console.error("Error en la resposta del servidor.");
+        }
+      } catch (error) {
+        console.error("Error en l'enviament:", error); 
+      }
+    });
+  }
+});
+
+// FUNCIÓ RANKINGS (GET)
+async function mostrarRankings() {
+  const api_token = "pHJNhm719MN5LCVqE839lOse0qvlbL1lBXndZmAWoJfiPXZFQHmgNQrzUHYS";
+  const url =`https://phpstack-1076337-5399863.cloudwaysapps.com/api/classification/pHJNhm719MN5LCVqE839lOse0qvlbL1lBXndZmAWoJfiPXZFQHmgNQrzUHYS/5`;
   try {
     const respuesta = await fetch(url);
     const dades = await respuesta.json();
-    const cosTaula = document.getElementById("cosRanking");
+    const cosTaula = document.getElementById("cuerpoRanking");
 
-    cosTaula.innerHTML = "";
-
-    dades.forEach((jugador, index) => {
-      const fila = document.createElement("tr");
-      fila.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${jugador.name}</td>
-            <td>${jugador.puntuacion}</td>
-            `;
-      cosTaula.appendChild(fila);
-    });
+    // Verificació d'array per evitar l'error "dades.forEach is not a function"
+    if (cosTaula) {
+      cosTaula.innerHTML = "";
+      dades.data.forEach((jugador, index) => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+              <td>${index + 1}</td>
+              <td>${jugador.name}</td>
+              <td>${jugador.puntuacion}</td>
+              `;
+        cosTaula.appendChild(fila); // Inserció dinàmica de nodes [6]
+      });
+    } else {
+      console.error("L'API no ha retornat un array vàlid o l'element HTML no existeix.", dades);
+    }
   } catch (error) {
     console.error("Error carregant el rànquing:", error);
   }
 }
 
-//Gestió formulari comentaris
-
-document
-  .getElementById("commentForm")
-  .addEventListener("submit", async (event) => {
-    event.preventDefault(); // Evita recàrrega
-
-    const nombre = document.getElementById("nombre").value;
-    const comentario = document.getElementById("comentario").value;
-
-    const datosAEnviar = {
-      api_token: "LIJOekjwbGP3XzDPPye8Na8tWJpONhM7s9c2YtYwA2Eab9yj4Omqe63u68TO",
-      name: nombre,
-      content: comentario,
-    };
-
-    //Gestión errores
-
-    try {
-      const respuesta = await fetch(
-        `https://phpstack-1076337-5399863.cloudwaysapps.com/api/posts/publicar`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json", //etiqueta formato json
-          },
-          body: JSON.stringify(datosAEnviar), // datosAEnviar debe incluir el api_token, pasar objeto a string para server
-        },
-      );
-
-      if (respuesta.ok) {
-        alert("Comentario enviado con exito!");
-        document.getElementById("commentForm").reset();
-        cargarComentarios();
-      } else {
-        console.error("Error en la respuesta del servidor.");
-      }
-    } catch (error) {
-      console.error("Error: ", error);
-    }
-  });
-
-mostrarRankings();
-cargarComentarios();
-
+// FUNCIÓ CARREGAR COMENTARIS (GET)
 async function cargarComentarios() {
-  const api_token =
-    "LIJOekjwbGP3XzDPPye8Na8tWJpONhM7s9c2YtYwA2Eab9yj4Omqe63u68TO";
-  const url = `https://phpstack-1076337-5399863.cloudwaysapps.com/api/classification/${api_token}`;
+  const api_token = "pHJNhm719MN5LCVqE839lOse0qvlbL1lBXndZmAWoJfiPXZFQHmgNQrzUHYS";
+  const url = `https://phpstack-1076337-5399863.cloudwaysapps.com/api/posts/${api_token}`;
 
   try {
     const respuesta = await fetch(url);
-    const comentarios = await respuesta.json();
+    if (!respuesta.ok) {
+        const errorData = await respuesta.json();
+        console.error("Error de autenticación:", errorData);
+        return; // Detenemos la ejecución si el token falla
+    }
+
+    const dadesComentaris = await respuesta.json();
     const container = document.getElementById("verComentarios");
 
-    container.innerHTML = ""; //innerHTML modifica html interno
-
-    comentarios.forEach((post) => {
-      const fila = document.createElement("tr");
-      fila.innerHTML = `
-        <td>${post.name}</td>
-        <td>${post.content}</td>
-        `;
-      container.appendChild(fila); //crear nuevo elemento, nuevo hijo 
-    });
+    if (container && Array.isArray(dadesComentaris)) {
+      container.innerHTML = "";
+      dadesComentaris.forEach((post) => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `<td>${post.name}</td><td>${post.content}</td>`;
+        container.appendChild(fila); 
+      });
+    }
   } catch (error) {
-    console.error("Error. Algo ha salido mal.", error);
+    console.error("Fallo crítico en la red:", error); // Captura errores de conexión [7]
   }
 }
