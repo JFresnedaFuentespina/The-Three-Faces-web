@@ -10,6 +10,12 @@ th, td {
   
 }
 
+.rankingContainer{
+  display: flex;
+  height: auto;
+  width: 0.1em;
+}
+
 .taulaRecords{
   align-self: center;
   margin: 2em;
@@ -19,19 +25,25 @@ th, td {
   display:flex;
   padding:2em;
   margin:1em;
+  margin-top: 3em;
   border-style: double;
   border-color: goldenrod;
+  box-shadow: 0 10px 20px rgba(248, 210, 41, 0.5);
   color:goldenrod;
 }
 
 .form{
   display: flex;
   padding: 1em;
+  align-content: center;
+  margin-block: 2em;
   color:goldenrod;
+  margin-bottom: 4em;
 }
 
 .tituloForm{
   color:goldenrod;
+
 }
 
 .submitButton{
