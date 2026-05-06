@@ -1,3 +1,4 @@
+// NAVBAR MENU
 const navbarToggle = document.querySelector('.navbar-toggle');
 
 const navbarMenu = document.querySelector('.navbar-menu');
@@ -9,14 +10,15 @@ navbarToggle.addEventListener('click', () => {
 
 });
 
+
 // Dark-Mode
 const themeBtn = document.getElementById('theme-toggle');
 const coinWrapper = document.getElementById('coin-wrapper');
 const coinImg = document.getElementById('coin-img');
 
 //Path to images
-const humanCoin = "Img/coins/moneda_cara.png";
-const ghostCoin = "Img/coins/moneda_cruz.png";
+const humanCoin = "../Img/coins/moneda_cara.png";
+const ghostCoin = "../Img/coins/moneda_cruz.png";
 
 const flipSound = new Audio('Sound/coinFlip.mp3');
 // Adjust volume

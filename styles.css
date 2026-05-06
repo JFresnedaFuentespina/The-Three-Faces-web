@@ -46,7 +46,7 @@
 }
 
 [data-theme="dark"] .navbar-menu li a{
-    color: var(--color-gold);
+    color: #e0faff;
 }
 
 /*Ghost coin glows in dark mode*/
