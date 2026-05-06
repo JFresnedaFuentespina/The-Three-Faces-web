@@ -7,7 +7,7 @@ document.addEventListener('mousemove', (e) => {
 });
 
 //Detect when to switch to doubleSword
-document.querySelectorAll('input, a, textarea').forEach(element => {
+document.querySelectorAll('input, a, textarea, button').forEach(element => {
   element.addEventListener('mouseenter', () => {
     cursor.classList.remove('sword');
     cursor.classList.add('doubleSword');
