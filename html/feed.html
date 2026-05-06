@@ -7,9 +7,10 @@
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Three Faces</title>
-  <link rel="icon" href="../Resources-T3F-WEB\Images\Sprites\moneda_original_curz.png"  type="image/png">
   <link href="../styles.css" rel="stylesheet">
   <link href="../css/feed.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="../Resources-T3F-WEB\Images\Sprites\moneda_original_curz.png"  type="image/png">
 </head>
 
 <body>
@@ -19,10 +20,8 @@
         <a href="../index.html" class="navbar-logo">
           <img src="../Resources-T3F-WEB/Images/Sprites/logo-kidneygames-png.png" alt="Kidney Games">
         </a>
-        <button class="navbar-toggle">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+        <button class="navbar-toggle" id="mobile-menu">
+          <i class="fa fa-bars"></i>
         </button>
 
         <ul class="navbar-menu">
@@ -31,13 +30,20 @@
           <li class="Navbar-link"><a href="../html/devBlog.html">DEV.BLOG</a></li>
           <li class="Navbar-link"><a href="feed.html">FEED</a></li>
           <li class="Navbar-link"><a href="#">SUPPORT</a></li>
-          <i class="fa fa-bars"></i>
+          <!-- Dark-mode button -->
+          <li class="theme-toggle-item">
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+              <div id="coin-wrapper">
+                <img src="../Img/coins/moneda_cara.png" alt="Moneda humano" id="coin-img">
+              </div> 
+            </button>
+          </li>
         </ul>
       </div>
     </nav>
   </header>
 
-  <section class="rankingContainer">
+  <section class="content-section">
     <h3>RANKING DE PUNTUACIONES!</h3>
     <table class="taulaRecords">
         <thead>
@@ -54,41 +60,54 @@
   </section>
 
 
-  <section class="form">
+  <section class="content-section">
     <div class="tituloForm">
-        <h4>DINOS LO QUE PIENSAS</h4>
+        <h3>DINOS LO QUE PIENSAS</h3>
     </div>
     
     <div class="comentarioContainer">
         <form id="commentForm">
-            <label for="nombre">Nombre usuario</label><br>
-            <input type="text" id="nombre" required>
-
+          <div class="input-group">
+            <label for="nombre">Nombre usuario</label>
+            <input type="text" id="nombre" placeholder="Tu nombre..." required>
+          </div>
+              
+          <div class="input-group">
             <label for="comentario">Comentario:</label>
-            <textarea id="comentario" rows="4" cols="50" required></textarea>
-            
+            <textarea id="comentario" rows="4" cols="50" placeholder="Escribe tu opinión aquí..." required></textarea>
+          </div>
+
             <button type="submit" class="submitButton">Enviar comentario</button>
         </form>
     </div>
   </section>
 
-  <section class="containerComentarios">
-    <h4>Mira lo que los otros estan diciendo!</h4>
-    <table class="tablaComentarios">
+  <section class="content-section">
+    <h3>¡Mira lo que los otros estan diciendo!</h3>
+    <table class="taulaRecords">
       <thead>
         <tr>
           <th>Usuario</th>
           <th>Comentario</th>
         </tr>
       </thead>
+
       <tbody id="verComentarios">
 
       </tbody>
-
     </table>
-
-
   </section>
+
+  <footer>
+    <div class="footer-content">
+      <span>&copy; 2026 Kidney Games. All rights reserved.</span>
+      <div class="socialmedia-icons">
+        <a href="https://www.instagram.com/thethreefacesvideogame?igsh=bjFubXdsaG00N2V0" target="_blank" rel="noopener" class="fa-brands fa-instagram"></a>
+        <a href="https://github.com/JFresnedaFuentespina/Testing-The-Three-Faces" target="_blank" rel="noopener" class="fa-brands fa-github"></a>
+        <a href="https://www.tiktok.com/@thethreefacesvideogame" target="_blank" rel="noopener" class="fa-brands fa-tiktok"></a>
+      </div>
+    </div>
+  </footer>
   
   <div id="custom-arrow" class="sword"></div>
   <script src="../javaScript/script.js"></script>

@@ -20,7 +20,7 @@ const coinImg = document.getElementById('coin-img');
 const humanCoin = "../Img/coins/moneda_cara.png";
 const ghostCoin = "../Img/coins/moneda_cruz.png";
 
-const flipSound = new Audio('Sound/coinFlip.mp3');
+const flipSound = new Audio('../Sound/coinFlip.mp3');
 // Adjust volume
 flipSound.volume = 0.5;
 
