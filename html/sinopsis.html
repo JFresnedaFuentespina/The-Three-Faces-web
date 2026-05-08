@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <script>
+            const theme = localStorage.getItem('theme');
+            if(theme === 'dark'){
+                document.documentElement.setAttribute('data-theme', 'dark')
+            }
+            //Prevent light flash transition
+            document.documentElement.classList.add('no-transition');
+            window.onload = () => {
+                //Allow transition once everything is painted
+                setTimeout(() =>{
+                    document.documentElement.classList.remove('no-transition');
+                }, 1);
+            };
+        </script>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Three Faces</title>
+        <link href="../styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="navbar-container">
+                    <a href="index.html" class="navbar-logo">
+                        <img src="../Resources-T3F-WEB/Images/Sprites/logo-kidneygames-png.png" alt="Kidney Games">
+                    </a>
+                    <button class="navbar-toggle" id="mobile-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <ul class="navbar-menu">
+
+                        <li class="Navbar-link"><a href="../index.html">THE THREE FACES</a></li>
+                        <li class="Navbar-link"><a href="sinopsis.html">SINOPSIS</a></li>
+                        <li class="Navbar-link"><a href="bestiario.html">BESTIARIO</a></li>
+                        <li class="Navbar-link"><a href="devBlog.html">DEV.BLOG</a></li>
+                        <li class="Navbar-link"><a href="feed.html">FEED</a></li>
+                        <li class="Navbar-link"><a href="#">SUPPORT</a></li>
+                        <!-- Dark-mode button -->
+                        <li class="theme-toggle-item">
+                            <button id="theme-toggle" aria-label="Toggle dark mode">
+                                <div id="coin-wrapper">
+                                    <img src="../Img/coins/moneda_cara.png" alt="Moneda humano" id="coin-img">
+                                </div> 
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <footer>
+            <div class="footer-content">
+                <span>&copy; 2026 Kidney Games. All rights reserved.</span>
+                <div class="socialmedia-icons">
+                    <a href="https://www.instagram.com/thethreefacesvideogame?igsh=bjFubXdsaG00N2V0" target="_blank" rel="noopener" class="fa-brands fa-instagram"></a>
+                    <a href="https://github.com/JFresnedaFuentespina/Testing-The-Three-Faces" target="_blank" rel="noopener" class="fa-brands fa-github"></a>
+                    <a href="https://www.tiktok.com/@thethreefacesvideogame" target="_blank" rel="noopener" class="fa-brands fa-tiktok"></a>
+                </div>
+            </div>
+        </footer>
+
+        <div id="custom-arrow" class="sword"></div>
+        <script src="../javaScript/script.js"></script>
+        <script src="../javaScript/cursorArrow.js"></script>
+    </body>
+</html>
