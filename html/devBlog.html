@@ -2,6 +2,20 @@
 <html lang="es">
 
     <head>
+        <script>
+        const theme = localStorage.getItem('theme');
+        if(theme === 'dark'){
+            document.documentElement.setAttribute('data-theme', 'dark')
+        }
+        //Prevent light flash transition
+        document.documentElement.classList.add('no-transition');
+        window.onload = () => {
+            //Allow transition once everything is painted
+            setTimeout(() =>{
+                document.documentElement.classList.remove('no-transition');
+            }, 1);
+        };
+    </script>
         <meta charset="UTF-8">
         <meta name="description" content="">
         <meta name="author" content="">

@@ -1,3 +1,7 @@
+.no-transition * {
+    transition: none !important;
+}
+
 @font-face {
     font-family: "Ringbearer"; 
     src: url("fonts/Ringbearer Medium V2.woff2") format("woff2");
@@ -19,6 +23,8 @@
     /*Variable tamany fonts*/
     --lletres-navbar: 1.1rem;
     
+    --coin-url: url("Img/coins/moneda_cara.png") ;
+    
 }
 
 /* -- GHOST MODE COLORS -- */
@@ -26,6 +32,7 @@
     /*Main Highlights*/
     --color-gold: #00f2ff;
     --shadow-color-gold: rgba(0, 242, 255, 0.5);
+    --coin-url: url("Img/coins/moneda_cruz.png");
 
     /*Backgrounds*/
     --bg-color-brown: #0d001a;
@@ -277,6 +284,7 @@ header{
 }
 
 #coin-img{
+    content: var(--coin-url);
     width: 45px;
     height: 45px;
     transition: transform 0.3s ease;

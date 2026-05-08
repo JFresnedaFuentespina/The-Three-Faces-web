@@ -14,54 +14,28 @@ navbarToggle.addEventListener('click', () => {
 // Dark-Mode
 const themeBtn = document.getElementById('theme-toggle');
 const coinWrapper = document.getElementById('coin-wrapper');
-const coinImg = document.getElementById('coin-img');
-
-//Path to images
-const humanCoin = "../Img/coins/moneda_cara.png";
-const ghostCoin = "../Img/coins/moneda_cruz.png";
-
 const flipSound = new Audio('../Sound/coinFlip.mp3');
-// Adjust volume
-flipSound.volume = 0.5;
 
-//Sync function: Update UI based on current theme
-function applyTheme(theme) {
-  if(theme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    if(coinImg) coinImg.src = ghostCoin;
-  } else {
-    document.documentElement.removeAttribute('data-theme');
-    if(coinImg) coinImg.src = humanCoin;
-  }
-}
+themeBtn.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const newTheme = isDark ? 'light' : 'dark';
 
-document.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('theme');
-
-  //Apply saved theme on page load
-  applyTheme(savedTheme);
-
-  //Toggle logic
-  themeBtn.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-    //Coin sound & animation logic
+    // Play Sound & Animation
     flipSound.currentTime = 0;
-    flipSound.playbackRate = 0.9 + Math.random() * 0.1;
     flipSound.play();
     coinWrapper.classList.add('toss-animation');
 
-    //Swap coin halfway animation
+    // Toggle Theme halfway through (300ms)
     setTimeout(() => {
-      applyTheme(newTheme);
-      localStorage.setItem('theme', newTheme);
+        if (newTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+        localStorage.setItem('theme', newTheme);
     }, 300);
 
     setTimeout(() => {
-      coinWrapper.classList.remove('toss-animation');
+        coinWrapper.classList.remove('toss-animation');
     }, 600);
-  });
-
-  
 });
