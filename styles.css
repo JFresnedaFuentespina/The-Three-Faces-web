@@ -359,6 +359,11 @@ header{
     min-width: 300px;
 }
 
+.frontPage-img{
+    width: 300px;
+    height: auto;
+}
+
     /* Bestiary cards */
 .bestiary-grid{
     display: grid;
