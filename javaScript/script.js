@@ -10,8 +10,7 @@ navbarToggle.addEventListener('click', () => {
 
 });
 
-
-// Dark-Mode
+// Dark-Mode + underline on navbar for active page
 const themeBtn = document.getElementById('theme-toggle');
 const coinWrapper = document.getElementById('coin-wrapper');
 const flipSound = new Audio('../Sound/coinFlip.mp3');
@@ -38,4 +37,28 @@ themeBtn.addEventListener('click', () => {
     setTimeout(() => {
         coinWrapper.classList.remove('toss-animation');
     }, 600);
+});
+
+/* ACTIVE PAGE INDICATOR */
+document.addEventListener('DOMContentLoaded', () =>{
+    /* Active page indicator */
+    const navLinks = document.querySelectorAll('.navbar-link');
+
+    // Normalize current path to handle folders properly
+    // This removes the domain and just looks at /html/dev.Blog.html etc.
+    const currentPath = window.location.pathname;
+
+    navLinks.forEach(link => {
+        // 'pathname' property of the link's  URL object for a clean comparison
+        const linkPath = new URL(link.href).pathname;
+
+        if(currentPath === linkPath){
+            link.classList.add('active');
+        }
+
+        //Special case for home page(index.html)
+        if(currentPath === "/" && linkPath.endsWith("index.html")){
+            link.classList.add('active');
+        }
+    });
 });
