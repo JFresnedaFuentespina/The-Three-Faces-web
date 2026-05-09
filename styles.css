@@ -339,8 +339,7 @@ header{
     min-height: 80vh;
 }
 
-
-/* -- SECTION GAME'S LORE -- */
+/* Basic structure of every section*/
 .content-section{
     padding: 60px 10%;
     min-height: 400px;
@@ -359,100 +358,11 @@ header{
     min-width: 300px;
 }
 
+/* Front page image of sinopsis */
 .frontPage-img{
     width: 300px;
     height: auto;
 }
-
-    /* Bestiary cards */
-.bestiary-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-}
-
-.character-card{
-    background: var(--color-cocoa);
-    padding: 20px;
-    border: 1px solid var(--color-gold);
-    text-align: center;
-    border-radius: 10px;
-}
-
-.image-placeholder{
-    width: 100%;
-    height: 265px;
-    background: var(--color-muted-bronze);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-}
-
-.image-placeholder img{
-    height: 265px;
-}
-
-    /*Relic grid*/
-.relic-grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    padding: 2rem;
-}
-
-.relic-item{
-    background: var(--color-cocoa);
-    padding: 10px;
-    text-align: center;
-    border: 1px solid var(--color-gold);
-}
-
-.relic-img{
-    height: 150px;
-    background: var(--color-muted-bronze);
-    margin-bottom: 10px;
-    position: relative;
-    overflow: hidden;
-    cursor: help;
-}
-
-.relic-img img{
-    height: 150px;
-    width: 100%;
-    object-fit: contain;
-}
-
-.relic-description{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--color-gold);
-    color: #000;
-
-    /*Layout for the text*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 15px;
-    box-sizing: border-box;
-    font-size: 14px;
-    font-weight: bold;
-
-    /*Hide text by default*/
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.relic-item:hover .relic-description{
-    opacity: 1;
-}
-
 
 /* -- DEV.BLOG SECTION -- */
 .main-developer-container{
@@ -702,23 +612,5 @@ footer{
         order: -1;
         margin-bottom: 20px;
         width: 100%;
-    }
-
-    /* Relic section on Bestiario*/
-    .relic-grid{
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Dev section */
-    .dev-photo-large{
-        flex: 1 1 100%;
-    }
-
-    .dev-name{
-        text-align: center !important;
-    }
-
-    .dev-socials{
-        text-align: center;
     }
 }
