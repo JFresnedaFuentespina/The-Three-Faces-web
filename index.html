@@ -4,14 +4,14 @@
 <head>
     <script>
         const theme = localStorage.getItem('theme');
-        if(theme === 'dark'){
+        if (theme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark')
         }
         //Prevent light flash transition
         document.documentElement.classList.add('no-transition');
         window.onload = () => {
             //Allow transition once everything is painted
-            setTimeout(() =>{
+            setTimeout(() => {
                 document.documentElement.classList.remove('no-transition');
             }, 1);
         };
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/bestiario.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" href="Resources-T3F-WEB\Images\Sprites\moneda_original_curz.png"  type="image/png">
+    <link rel="icon" href="Resources-T3F-WEB\Images\Sprites\moneda_original_curz.png" type="image/png">
 </head>
 
 <body>
@@ -47,17 +47,17 @@
                     <li><a href="html/feed.html" class="navbar-link">FEED</a></li>
                     <li><a href="html/support.html" class="navbar-link">SUPPORT</a></li>
                     <!-- Dark-mode button -->
-                     <li class="theme-toggle-item">
+                    <li class="theme-toggle-item">
                         <button id="theme-toggle" aria-label="Toggle dark mode">
                             <div id="coin-wrapper">
                                 <img src="Img/coins/moneda_cara.png" alt="Moneda humano" id="coin-img">
-                            </div> 
+                            </div>
                         </button>
-                     </li>
+                    </li>
                 </ul>
             </div>
         </nav>
-    </header>      
+    </header>
     <section class="cover-container">
         <section class="cover-title">
         </section>
@@ -67,7 +67,7 @@
         <!--Characters lore section-->
         <section id="bestiario" class="content-section">
             <h2>BESTIARIO</h2>
-            
+
             <h3>EL PROTAGONISTA</h3>
             <div class="bestiary-grid dual-character">
                 <div class="character-card">
@@ -148,7 +148,7 @@
                     <div class="image-placeholder">
                         <img src="Img/enemies/fantasma-the3faces.png" alt="Fantasma A">
                     </div>
-                    
+
                     <h4>Fantasma</h4>
                     <p>
                         Entidades del plano espectral. Atacan a distancia y pueden
@@ -276,42 +276,21 @@
 
 
 
-            <section class="content-section">
-    <h3>RANKING DE PUNTUACIONES!</h3>
-    <table class="taulaRecords">
-        <thead>
-            <tr>
-                <th>Posición</th>
-                <th>Puntuación</th>
-                <th>Jugador</th>
-            </tr>
-        </thead>
-        <tbody id="cuerpoRanking">
-            <!-- Los datos se inyectarán aquí con JavaScript -->
-        </tbody>
-    </table>
-</section>
-
-
-
-
-
-            <section class="content-section">
-    <h3>RANKING DE PUNTUACIONES!</h3>
-    <table class="taulaRecords">
-        <thead>
-            <tr>
-                <th>Posición</th>
-                <th>Puntuación</th>
-                <th>Jugador</th>
-            </tr>
-        </thead>
-        <tbody id="cuerpoRanking">
-            <!-- Los datos se inyectarán aquí con JavaScript -->
-        </tbody>
-    </table>
-</section>
-
+        <section class="content-section">
+            <h3>RANKING DE PUNTUACIONES!</h3>
+            <table class="taulaRecords">
+                <thead>
+                    <tr>
+                        <th>Posición</th>
+                        <th>Puntuación</th>
+                        <th>Jugador</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoRanking">
+                    <!-- Los datos se inyectarán aquí con JavaScript -->
+                </tbody>
+            </table>
+        </section>
 
     </main>
 
@@ -323,18 +302,19 @@
         <div class="footer-content">
             <span>&copy; 2026 Kidney Games. All rights reserved.</span>
             <div class="socialmedia-icons">
-                <a href="https://www.instagram.com/thethreefacesvideogame?igsh=bjFubXdsaG00N2V0" target="_blank" rel="noopener" class="fa-brands fa-instagram"></a>
-                <a href="https://github.com/JFresnedaFuentespina/Testing-The-Three-Faces" target="_blank" rel="noopener" class="fa-brands fa-github"></a>
-                <a href="https://www.tiktok.com/@thethreefacesvideogame" target="_blank" rel="noopener" class="fa-brands fa-tiktok"></a>
+                <a href="https://www.instagram.com/thethreefacesvideogame?igsh=bjFubXdsaG00N2V0" target="_blank"
+                    rel="noopener" class="fa-brands fa-instagram"></a>
+                <a href="https://github.com/JFresnedaFuentespina/Testing-The-Three-Faces" target="_blank" rel="noopener"
+                    class="fa-brands fa-github"></a>
+                <a href="https://www.tiktok.com/@thethreefacesvideogame" target="_blank" rel="noopener"
+                    class="fa-brands fa-tiktok"></a>
             </div>
         </div>
     </footer>
     <div id="custom-arrow" class="sword"></div>
     <script src="javaScript/script.js"></script>
+    <script src="javaScript/feed.js"></script>
     <script src="javaScript/cursorArrow.js"></script>
-    <script src="javaScript/feed.js"></script>
-    <script src="javaScript/feed.js"></script>
-
 </body>
 
 </html>
