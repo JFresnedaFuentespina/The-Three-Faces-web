@@ -91,21 +91,21 @@ document.addEventListener("DOMContentLoaded", () => {
             return; 
         }
 
-        const dadesComentaris = await respuesta.json();
-        const container = document.getElementById("verComentarios");
+    const dadesComentaris = await respuesta.json();
+    const container = document.getElementById("verComentarios");
 
-        // CORRECCIÓ: Verifiquem si dadesComentaris.data existeix i és un array
-        if (container && dadesComentaris.data && Array.isArray(dadesComentaris.data)) {
-        container.innerHTML = ""; // Neteja del contingut segons el DOM [3]
-        dadesComentaris.data.forEach((post) => {
-            const fila = document.createElement("tr"); // Creació dinàmica de nodes [4]
-            fila.innerHTML = `<td>${post.name}</td><td>${post.content}</td>`;
-            container.appendChild(fila); 
-        });
-        } else {
-        console.error("L'estructura de dades no conté l'array 'data' esperat:", dadesComentaris);
-        }
-    } catch (error) {
-        console.error("Fallo crítico en la red:", error); 
+    // CORRECCIÓ: Verifiquem si dadesComentaris.data existeix i és un array
+    if (container && dadesComentaris.data && Array.isArray(dadesComentaris.data)) {
+      container.innerHTML = ""; // Neteja del contingut segons el DOM [3]
+      dadesComentaris.data.forEach((post) => {
+        const fila = document.createElement("tr"); // Creació dinàmica de nodes [4]
+        fila.innerHTML = `<td>${post.name}</td><td>${post.content}</td>`;
+        container.appendChild(fila); 
+      });
+    } else {
+      console.error("L'estructura de dades no conté l'array 'data' esperat:", dadesComentaris);
     }
-    }
+  } catch (error) {
+    console.error("Fallo crítico en la red:", error); 
+  }
+}
