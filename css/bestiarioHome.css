@@ -1,0 +1,146 @@
+/* -- Single Row Layout (4 Columns) -- */
+.bestiary-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px;
+    padding: 40px 2%;
+    max-width: 1400px;
+    margin: 0 auto;
+    grid-auto-rows: 1fr;
+}
+
+.preview-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+    padding: 15px;
+    background: var(--color-cocoa);
+    border: 1px solid var(--color-gold);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* Titles don't wrap and break the height */
+.preview-card h3{
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+}
+
+.image-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    background: var(--color-muted-bronze);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.image-placeholder img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.card-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    margin-top: 10px;
+    height: 120px;
+}
+
+.card-info h4 {
+    color: var(--color-gold);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.card-info p {
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+#protagonist-desc, #enemy-desc, .card-info p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 5px;
+    height: 80px;
+    margin-top: 5px;
+}
+
+/* -- Custom Themed Scrollbar for card's description -- */
+#protagonist-desc::-webkit-scrollbar, 
+#enemy-desc::-webkit-scrollbar, 
+.card-info p::-webkit-scrollbar {
+    width: 6px;
+}
+
+#protagonist-desc::-webkit-scrollbar-track, 
+#enemy-desc::-webkit-scrollbar-track, 
+.card-info p::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+#protagonist-desc::-webkit-scrollbar-thumb, 
+#enemy-desc::-webkit-scrollbar-thumb, 
+.card-info p::-webkit-scrollbar-thumb {
+    background: var(--color-gold);
+    border-radius: 10px;
+}
+
+#protagonist-desc, #enemy-desc, .card-info p {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-gold) rgba(0, 0, 0, 0.2);
+}
+
+/* See More button */
+.see-more-btn {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: var(--color-gold);
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.see-more-btn:hover {
+    background-color: transparent;
+    color: var(--color-gold);
+    border: 2px solid var(--color-gold);
+}
+
+.fade-out {
+    opacity: 0 !important;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .bestiary-grid-compact {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .bestiary-grid-compact {
+        grid-template-columns: 1fr;
+    }
+}
