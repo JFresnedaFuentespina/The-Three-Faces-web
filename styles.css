@@ -375,6 +375,7 @@ header{
 
 /* -- YT VIDEO CONTAINER -- */
 .video-container {
+    width: 100%;
     max-width: 900px;
     margin: 20px auto 50px auto;
     padding: 0 20px;
