@@ -22,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Three Faces</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="css/bestiario.css">
+    <link rel="stylesheet" href="css/bestiarioHome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="Resources-T3F-WEB\Images\Sprites\moneda_original_curz.png" type="image/png">
 </head>
@@ -64,215 +64,63 @@
     </section>
 
     <main>
-        <!--Characters lore section-->
         <section id="bestiario" class="content-section">
-            <h2>BESTIARIO</h2>
+    <h2>BESTIARIO</h2>
 
-            <h3>EL PROTAGONISTA</h3>
-            <div class="bestiary-grid dual-character">
-                <div class="character-card">
-                    <div class="image-placeholder">
-                        <img src="Img/Character/Esqueleto.png" alt="Personaje principal versión Humano">
-                    </div>
-                    <h4>Parte Humana</h4>
-                    <p>
-                        Era un tipo normal con una vida tranquila. Cuando estalló la
-                        guerra entre Cara y Cruz, tuvo la suerte o la desgracia de
-                        encontrarse con una antigua reliquia: la moneda original. Ese
-                        descubrimiento cambió su destino, ahora es capaz de usar el poder
-                        de la moneda y hará lo que sea necesario.
-                    </p>
-                </div>
-                <div class="character-card">
-                    <div class="image-placeholder">
-                        <img src="Img/Character/Fantasma.png" alt="Personaje principal versión Fantasma">
-                    </div>
-                    <h4>Parte Fantasma</h4>
-                    <p>
-                        Es el espíritu vinculado a la moneda original. Su misión es unirse
-                        a quien decida empuñar la moneda para restaurar el balance perdido.
-                        En esta forma, el protagonista canaliza su poder, accediendo a
-                        habilidades que van más allá del mundo físico.
-                    </p>
-                </div>
+    <div class="bestiary-grid-compact">
+        <!-- 1. Main Character (Dynamic) -->
+        <div class="character-card preview-card">
+            <h3 id="protagonist-title">PROTAGONISTA</h3>
+            <div class="image-placeholder">
+                <img id="protagonist-img" src="Img/Character/Esqueleto.png" alt="Protagonista">
             </div>
+            <div class="card-info">
+                <h4 id="protagonist-form">Parte Humana</h4>
+                <p id="protagonist-desc">Era un tipo normal con una vida tranquila. Descubrió la moneda original y su destino cambió.</p>
+            </div>
+            <a href="html/bestiario.html" class="see-more-btn">SEE MORE</a>
+        </div>
 
+        <!-- 2. Bosses (Static) -->
+        <div class="character-card preview-card">
             <h3>LOS JEFES</h3>
-            <div class="bestiary-grid">
-                <div class="character-card">
-                    <div class="image-placeholder">
-                        <img src="Img/enemies/cara-boss-cara.png" alt="Jefe Cara">
-                    </div>
-                    <h4>Cara</h4>
-                    <p>
-                        El Guardián del mundo material. Dios del orden y la materia.
-                        Representa la fuerza física. Sus ataques son directos y contundentes.
-                    </p>
-                </div>
-                <div class="character-card">
-                    <div class="image-placeholder">
-                        <img src="Img/enemies/cara-boss-cruz.png" alt="Jefe Cruz">
-                    </div>
-                    <h4>Cruz</h4>
-                    <p>
-                        La Soberana del mundo espectral. Entidad del caos espiritual y
-                        lo intangible. Es rápida e impredecible. Su naturaleza etérea hace
-                        que el enfrentamiento sea dinámico.
-                    </p>
-                </div>
-                <div class="character-card">
-                    <div class="image-placeholder">
-                        <img src="Img/enemies/cara-boss-canto.png" alt="Jefe Canto">
-                    </div>
-                    <h4>Canto</h4>
-                    <p>
-                        El azar absoluto. El dios perdido. Combina elementos de Cara y
-                        Cruz, alternando entre ataques físicos y espectrales.
-                    </p>
-                </div>
+            <div class="image-placeholder">
+                <img src="Img/enemies/cara-boss-canto.png" alt="Jefes">
             </div>
-
-            <h3>ENEMIGOS COMUNES</h3>
-            <div class="bestiary-grid">
-                <div class="character-card">
-                    <div class="image-placeholder">
-                        <img src="Img/enemies/zombie-the3faces.png" alt="Zombie A">
-                    </div>
-                    <h4>Zombie</h4>
-                    <p>
-                        Criaturas ligadas al mundo material. Se acercan al jugador
-                        de forma constante para atacar cuerpo a cuerpo.
-                    </p>
-                </div>
-                <div class="character-card">
-                    <div class="image-placeholder">
-                        <img src="Img/enemies/fantasma-the3faces.png" alt="Fantasma A">
-                    </div>
-
-                    <h4>Fantasma</h4>
-                    <p>
-                        Entidades del plano espectral. Atacan a distancia y pueden
-                        desplazarse de forma impredecible.
-                    </p>
-                </div>
+            <div class="card-info">
+                <h4>El Azar y los Dioses</h4>
+                <p>Enfréntate a Cara, Cruz y el escurridizo Canto en batallas que desafían la realidad.</p>
             </div>
+            <a href="html/bestiario.html" class="see-more-btn">SEE MORE</a>
+        </div>
 
+        <!-- 3. Enemies (Dynamic) -->
+        <div class="character-card preview-card">
+            <h3 id="enemy-title">ENEMIGOS</h3>
+            <div class="image-placeholder">
+                <img id="enemy-img" src="Img/enemies/zombie-the3faces.png" alt="Enemigo">
+            </div>
+            <div class="card-info">
+                <h4 id="enemy-form">Zombie</h4>
+                <p id="enemy-desc">Criaturas ligadas al mundo material que atacan cuerpo a cuerpo.</p>
+            </div>
+            <a href="html/bestiario.html" class="see-more-btn">SEE MORE</a>
+        </div>
+
+        <!-- 4. Relics (Slideshow) -->
+        <div class="character-card preview-card">
             <h3>RELICARIOS</h3>
-            <div class="relic-grid">
-                <div class="relic-item">
-                    <div class="relic-img">
-                        <img src="Img/Items/bomb.png" alt="Bomba">
-                        <div class="relic-description">
-                            Cuando uses la moneda, generas una explosión alrededor
-                            tuya que hace mucho daño a los enemigos.
-                        </div>
-                    </div>
-                    <span>Bomba</span>
-                </div>
-
-                <div class="relic-item">
-                    <div class="relic-img">
-                        <img src="Img/Items/skull.png" alt="Calavera">
-                        <div class="relic-description">
-                            Aumenta mucho tu daño pero reduce tu vida máxima.
-                        </div>
-                    </div>
-                    <span>Calavera</span>
-                </div>
-
-                <div class="relic-item">
-                    <div class="relic-img">
-                        <img src="Img/Items/heart.png" alt="Corazón rojo">
-                        <div class="relic-description">
-                            Te cura por completo y te añade un corazón rojo adicional.
-                        </div>
-                    </div>
-                    <span>Corazón rojo</span>
-                </div>
-
-                <div class="relic-item">
-                    <div class="relic-img">
-                        <img src="Img/Items/shield.png" alt="Escudo">
-                        <div class="relic-description">
-                            En la forma humana, pasas a llevar un escudo en la otra mano.
-                            Al usar clic derecho, podrás bloquear ataques de los enemigos.
-                        </div>
-                    </div>
-                    <span>Escudo</span>
-                </div>
-
-                <div class="relic-item">
-                    <div class="relic-img">
-                        <img src="Img/Items/star.png" alt="Estrella">
-                        <div class="relic-description">
-                            Aumenta todas tus estadísticas (Ataque, velocidad e intervalo de
-                            ataque).
-                        </div>
-                    </div>
-                    <span>Estrella</span>
-                </div>
-
-                <div class="relic-item">
-                    <div class="relic-img">
-                        <img src="Img/Items/yellow_arrow.png" alt="Incremento amarillo">
-                        <div class="relic-description">
-                            Aumenta el intervalo de ataque.
-                        </div>
-                    </div>
-                    <span>Incremento amarillo</span>
-                </div>
-
-                <div class="relic-item">
-                    <div class="relic-img">
-                        <img src="Img/Items/blue_arrow.png" alt="Incremento azul">
-                        <div class="relic-description">
-                            Aumenta tu velocidad de movimiento.
-                        </div>
-                    </div>
-                    <span>Incremento azul</span>
-                </div>
-
-                <div class="relic-item">
-                    <div class="relic-img">
-                        <img src="Img/Items/red_arrow.png" alt="Incremento rojo">
-                        <div class="relic-description">
-                            Aumenta tu daño.
-                        </div>
-                    </div>
-                    <span>Incremento rojo</span>
-                </div>
-
-                <div class="relic-item">
-                    <div class="relic-img">
-                        <img src="Img/Items/blue_pill.png" alt="Píldora azul">
-                        <div class="relic-description">
-                            Corazón extra temporal. Si te golpean lo pierdes.
-                        </div>
-                    </div>
-                    <span>Píldora azul</span>
-                </div>
-
-                <div class="relic-item">
-                    <div class="relic-img">
-                        <img src="Img/Items/green_potion.png" alt="Poción verde">
-                        <div class="relic-description">
-                            Tus ataques aplican envenenamiento al golpear a los enemigos.
-                        </div>
-                    </div>
-                    <span>Poción verde</span>
-                </div>
-
-                <div class="relic-item">
-                    <div class="relic-img">
-                        <img src="Img/Items/hourglass.png" alt="Reloj de arena">
-                        <div class="relic-description">
-                            Al girar la moneda, detienes a los enemigos que haya en la habitación.
-                        </div>
-                    </div>
-                    <span>Reloj de arena</span>
-                </div>
+            <div class="image-placeholder relic-bg">
+                <img id="relic-slide" src="Img/Items/bomb.png" alt="Relicario" class="relic-img-slide">
             </div>
-        </section>
+            <div class="card-info">
+                <h4>Objetos de Poder</h4>
+                <p>Colecciona reliquias antiguas que alteran tus estadísticas y habilidades de combate.</p>
+            </div>
+            <a href="html/bestiario.html" class="see-more-btn">SEE ALL</a>
+        </div>
+    </div>
+</section>
 
 
 
@@ -315,6 +163,7 @@
     <script src="javaScript/script.js"></script>
     <script src="javaScript/feed.js"></script>
     <script src="javaScript/cursorArrow.js"></script>
+    <script src="javaScript/bestiarioHome.js"></script>
 </body>
 
 </html>
