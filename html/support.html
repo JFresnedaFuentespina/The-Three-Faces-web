@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <script>
+            const theme = localStorage.getItem('theme');
+            if(theme === 'dark'){
+                document.documentElement.setAttribute('data-theme', 'dark')
+            }
+            //Prevent light flash transition
+            document.documentElement.classList.add('no-transition');
+            window.onload = () => {
+                //Allow transition once everything is painted
+                setTimeout(() =>{
+                    document.documentElement.classList.remove('no-transition');
+                }, 1);
+            };
+        </script>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Three Faces</title>
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="../css/support.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="navbar-container">
+                    <a href="index.html" class="navbar-logo">
+                        <img src="../Resources-T3F-WEB/Images/Sprites/logo-kidneygames-png.png" alt="Kidney Games">
+                    </a>
+                    <button class="navbar-toggle" id="mobile-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <ul class="navbar-menu">
+
+                        <li><a href="../index.html" class="navbar-link">THE THREE FACES</a></li>
+                        <li><a href="sinopsis.html" class="navbar-link">SINOPSIS</a></li>
+                        <li><a href="bestiario.html" class="navbar-link">BESTIARIO</a></li>
+                        <li><a href="devBlog.html" class="navbar-link">DEV.BLOG</a></li>
+                        <li><a href="feed.html" class="navbar-link">FEED</a></li>
+                        <li><a href="support.html" class="navbar-link">SUPPORT</a></li>
+                        <!-- Dark-mode button -->
+                        <li class="theme-toggle-item">
+                            <button id="theme-toggle" aria-label="Toggle dark mode">
+                                <div id="coin-wrapper">
+                                    <img src="../Img/coins/moneda_cara.png" alt="Moneda humano" id="coin-img">
+                                </div> 
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main id="support-page" class="content-section">
+            <section class="support-header">
+                <h2>SOPORTE & PRENSA</h2>
+                <p>Proyecto Académico - Kidney Games</p>
+            </section>
+
+            <div class="support-grid">
+                <!-- Private channel -->
+                <div class="support-card">
+                    <h3>CONTACTO DE CONSULTA</h3>
+                    <p>
+                        Utiliza este formulario para cualquier duda técnica o consulta sobre el proyecto. 
+                        Nuestro equipo recibirá tu mensaje directamente.
+                    </p>
+                    <form id="support-form">
+                        <div class="input-group">
+                            <label>Nombre</label>
+                            <input type="text" placeholder="Escribe tu nombre" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Asunto</label>
+                            <input type="text" placeholder="Motivo de la consulta" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Mensaje</label>
+                            <textarea placeholder="Detalla tu consulta aquí..." rows="6" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="see-more-btn">ENVIAR</button>
+                    </form>
+                </div>
+
+                <!-- B2B: identidad de marca y assets -->
+                <div class="support-card press-section">
+                    <h3>IDENTIDAD DE MARCA</h3>
+                    <p>
+                        Espacio reservado para prensa y colaboradores profesionales. Aquí encontraréis los recursos 
+                        visuales originales para cominucaciones oficiales.
+                    </p>
+
+                    <div class="brand-identity-box">
+                        <h4>LOGO OFICIAL</h4>
+                        <div class="logo-preview">
+                            <img src="../Resources-T3F-WEB/Images/Sprites/logo-kidneygames-png.png" alt="Kidney Games Logo">
+                        </div>
+
+                        <div class="info-box">
+                            <h4>PRESS KIT & ASSETS</h4>
+                            <p>Descarga el paquete oficial que incluye:</p>
+                            <ul class="asset-list">
+                                <li><i class="fa fa-check"></i>Logos en alta resolución (.PNG transparente)</li>
+                                <li><i class="fa fa-check"></i>Paleta de colores oficial</li>
+                                <li><i class="fa fa-check"></i>Kay-Art del juego</li>
+                            </ul>
+
+                            <!-- Botón de descarga -->
+                             <a href="../Assets/T3F_Brand_Kit.zip" download="T3F_Brand_Kit.zip" class="see-more-btn download-btn">
+                                <i class="fa fa-download"></i>
+                                Descargar recursos originales
+                             </a>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <span>&copy; 2026 Kidney Games. All rights reserved.</span>
+                <div class="socialmedia-icons">
+                    <a href="https://www.instagram.com/thethreefacesvideogame?igsh=bjFubXdsaG00N2V0" target="_blank" rel="noopener" class="fa-brands fa-instagram"></a>
+                    <a href="https://github.com/JFresnedaFuentespina/Testing-The-Three-Faces" target="_blank" rel="noopener" class="fa-brands fa-github"></a>
+                    <a href="https://www.tiktok.com/@thethreefacesvideogame" target="_blank" rel="noopener" class="fa-brands fa-tiktok"></a>
+                </div>
+            </div>
+        </footer>
+
+        <div id="custom-arrow" class="sword"></div>
+        <script src="../javaScript/script.js"></script>
+        <script src="../javaScript/cursorArrow.js"></script>
+    </body>
+</html>

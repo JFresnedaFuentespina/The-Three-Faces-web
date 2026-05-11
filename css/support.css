@@ -1,0 +1,123 @@
+.support-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.support-card {
+    background: var(--color-cocoa);
+    border: 2px solid var(--color-gold);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.support-card h3 {
+    color: var(--color-gold);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-gold);
+    padding-bottom: 10px;
+}
+
+/* -- Estilo para el formulario -- */
+#support-form input, #support-form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-muted-bronze);
+    color: var(--text-color);
+    border-radius: 5px;
+}
+
+.contact-info, .press-kit-section {
+    margin-top: 30px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* Identity section */
+.logo-preview {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 1px dashed var(--color-gold);
+}
+
+.logo-preview img {
+    max-width: 150px;
+    height: auto;
+    filter: drop-shadow(0 0 10px var(--color-gold));
+}
+
+.asset-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.asset-list li {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: #ccc;
+}
+
+.asset-list i {
+    color: var(--color-gold);
+    margin-right: 8px;
+}
+
+.see-more-btn {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: var(--color-gold);
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.see-more-btn:hover {
+    background-color: transparent;
+    color: var(--color-gold);
+    border: 2px solid var(--color-gold);
+}
+
+/* Download button */
+.download-btn {
+    background-color: var(--color-gold) !important;
+    color: #000 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    padding: 15px !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+@media (max-width: 768px) {
+    .support-grid {
+        grid-template-columns: 1fr;
+    }
+}
