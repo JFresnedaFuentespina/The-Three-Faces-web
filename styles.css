@@ -354,6 +354,13 @@ header{
     min-height: 80vh;
 }
 
+.cover-container img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 /* Basic structure of every section*/
 .content-section{
     padding: 60px 10%;
