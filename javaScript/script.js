@@ -13,7 +13,7 @@ navbarToggle.addEventListener('click', () => {
 // Dark-Mode + underline on navbar for active page
 const themeBtn = document.getElementById('theme-toggle');
 const coinWrapper = document.getElementById('coin-wrapper');
-const flipSound = new Audio('/The-Three-Faces-web/Sound/coinFlip.mp3');
+const flipSound = new Audio('../Sound/coinFlip.mp3');
 
 themeBtn.addEventListener('click', () => {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
