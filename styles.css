@@ -496,10 +496,6 @@ footer{
         color: var(--bg-color-gold);
     }
 
-    .cover-container{
-        min-width: 75vh;
-    }
-
     .navbar-container .navbar-menu.active{
         display: flex;
     }
@@ -532,6 +528,12 @@ footer{
         width: 100%;
     }
 
+    .cover-container{
+        min-width: auto;
+        width: 100%;
+        min-height: 50vh;
+    }
+
 }
 
 @media (max-width: 780px){
@@ -553,10 +555,6 @@ footer{
         background-color: transparent;
         backdrop-filter: blur(10px);
         color: var(--color-gold);
-    }
-
-    .cover-container{
-        min-width: 75vh;
     }
 
     .navbar-container .navbar-menu.active{
