@@ -118,13 +118,13 @@
 
     .main-developer-container {
         padding: 20px;
-        width: 100%; /* Ensure the box stays within the screen */
-        overflow: hidden; /* Safety net */
+        width: 100%;
+        overflow: hidden;
     }
 
-    /* 2. Fix the text overflow */
+    /* 2. Fix text overflow */
     .text-content {
-        min-width: unset !important; /* This overrides the 300px from your main CSS */
+        min-width: unset !important; /* This overrides the 300px from the main css */
         width: 100%;
         text-align: center;
         overflow-wrap: break-word; /* Forces long words to break instead of overflow */
@@ -138,7 +138,7 @@
         white-space: normal; /* Allows the text to go to the next line */
     }
 
-    /* 4. Fix the social icons if they are too wide */
+    /* 4. Fix social icons if they are too wide */
     .dev-socials {
         display: flex;
         justify-content: center;
