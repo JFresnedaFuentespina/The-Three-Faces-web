@@ -77,11 +77,43 @@
     list-style-type: none;
 
     /* Hide real arrow/cursor */
-    cursor: none !important;
+    cursor: auto;
 }
 
 /* -- STYLE CUSTOM ARROW/CURSOR -- */
 #custom-arrow {
+    display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    * { 
+        cursor: none !important; 
+    }
+
+    #custom-arrow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 32px;
+        height: 32px;
+        pointer-events: none;
+        z-index: 9999;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: translate(-50%, -50%);
+    }
+
+    #custom-arrow.sword {
+        background-image: url("Img/arrowCursor/cursor_espada.png");
+    }
+
+    #custom-arrow.doubleSword {
+        background-image: url("Img/arrowCursor/cursor_seleccion.png");
+    }
+}
+
+#custom-arrow {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -95,11 +127,18 @@
 }
 
 /* Default-state: sword */
-#custom-arrow.sword{
+.using-mouse * {
+    cursor: none !important;
+}
+
+.using-mouse #custom-arrow {
+    display: block;
+}
+
+#custom-arrow.sword {
     background-image: url("Img/arrowCursor/cursor_espada.png");
 }
 
-/* Hover/Input state: doubleSword */
 #custom-arrow.doubleSword {
     background-image: url("Img/arrowCursor/cursor_seleccion.png");
 }
