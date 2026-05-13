@@ -10,22 +10,25 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault(); 
 
         const nombre = document.getElementById("nombre").value;
-        const comentario = document.getElementById("comentario").value;
+        const email = document.getElementById("email").value;
+        const asunto = document.getElementById("asunto").value;
+        const mensaje = document.getElementById("mensaje").value;
+        
 
       
         const API_TOKEN = "pHJNhm719MN5LCVqE839lOse0qvlbL1lBXndZmAWoJfiPXZFQHmgNQrzUHYS";
 
         const datosAEnviar = {
-            data: {
             api_token: API_TOKEN,
-            name: nombre,
-            content: comentario,
-            }
+            nombre: nombre,
+            email: email,
+            asunto: asunto,
+            mensaje: mensaje,
         };
 
         try {
             const respuesta = await fetch(
-            `https://phpstack-1076337-5399863.cloudwaysapps.com/api/posts`,
+            "https://phpstack-1076337-5399863.cloudwaysapps.com/api/contact",
             {
                 method: "POST", // Mètode per enviar dades al servidor 
                 headers: { "Content-Type": "application/json" },
@@ -94,18 +97,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const dadesComentaris = await respuesta.json();
     const container = document.getElementById("verComentarios");
 
-    // CORRECCIÓ: Verifiquem si dadesComentaris.data existeix i és un array
+    // si dadesComentaris.data existeix i és un array
     if (container && dadesComentaris.data && Array.isArray(dadesComentaris.data)) {
       container.innerHTML = ""; // Neteja del contingut segons el DOM [3]
-      dadesComentaris.data.forEach((post) => {
+        dadesComentaris.data.forEach((post) => {
         const fila = document.createElement("tr"); // Creació dinàmica de nodes [4]
         fila.innerHTML = `<td>${post.name}</td><td>${post.content}</td>`;
         container.appendChild(fila); 
-      });
+    });
     } else {
-      console.error("L'estructura de dades no conté l'array 'data' esperat:", dadesComentaris);
+        console.error("L'estructura de dades no conté l'array 'data' esperat:", dadesComentaris);
     }
-  } catch (error) {
+} catch (error) {
     console.error("Fallo crítico en la red:", error); 
-  }
+}
 }
