@@ -70,22 +70,22 @@
                         Utiliza este formulario para cualquier duda técnica o consulta sobre el proyecto. 
                         Nuestro equipo recibirá tu mensaje directamente.
                     </p>
-                    <form id="support-form">
+                    <form class="support-form" id="commentForm">
                         <div class="input-group">
-                            <label>Nombre</label>
-                            <input type="text" placeholder="Escribe tu nombre" required>
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" placeholder="Escribe tu nombre" required>
                         </div>
                         <div class="input-group">
                             <label for="email">Email</label>
-                            <input type="email" placeholder="Ej: tucorreo@correo.com" required>
+                            <input type="email" id="email" placeholder="Ej: tucorreo@correo.com" required>
                         </div>
                         <div class="input-group">
-                            <label>Asunto</label>
-                            <input type="text" placeholder="Motivo de la consulta" required>
+                            <label for="asunto">Asunto</label>
+                            <input type="text" id="asunto" placeholder="Motivo de la consulta" required>
                         </div>
                         <div class="input-group">
-                            <label>Mensaje</label>
-                            <textarea placeholder="Detalla tu consulta aquí..." rows="6" required></textarea>
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" placeholder="Detalla tu consulta aquí..." rows="6" required></textarea>
                         </div>
                         
                         <button type="submit" class="see-more-btn">ENVIAR</button>
@@ -139,7 +139,7 @@
 
         <div id="custom-arrow" class="sword"></div>
         <script src="../javaScript/script.js"></script>
-        <script src="../javaScript/support.js"></script>
+        <script src="../javaScript/feed.js"></script>
         <script src="../javaScript/cursorArrow.js"></script>
     </body>
 </html>

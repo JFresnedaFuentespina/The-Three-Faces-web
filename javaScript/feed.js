@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         });
     }
-    });
+});
 
 // FUNCIÓ RANKINGS (GET)
     async function mostrarRankings() {

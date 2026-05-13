@@ -26,7 +26,7 @@
 }
 
 /* -- Estilo para el formulario -- */
-#support-form input, #support-form textarea {
+.support-form input, .support-form textarea {
     width: 100%;
     margin-bottom: 15px;
     padding: 10px;
