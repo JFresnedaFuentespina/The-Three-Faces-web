@@ -13,7 +13,12 @@ navbarToggle.addEventListener('click', () => {
 // Dark-Mode + underline on navbar for active page
 const themeBtn = document.getElementById('theme-toggle');
 const coinWrapper = document.getElementById('coin-wrapper');
-const flipSound = new Audio('../Sound/coinFlip.mp3');
+
+// Check if current URL includes "/html/"
+const isSubPage = window.location.pathname.includes('/html/');
+// If it is a sub-page, go up ine level. If it is index, stay in root
+const soundPath = isSubPage ? '../Sound/coinFlip.mp3' : 'Sound/coinFlip.mp3';
+const flipSound = new Audio(soundPath);
 
 themeBtn.addEventListener('click', () => {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
