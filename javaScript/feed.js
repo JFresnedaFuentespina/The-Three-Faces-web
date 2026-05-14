@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
 
       
-        const API_TOKEN = "pHJNhm719MN5LCVqE839lOse0qvlbL1lBXndZmAWoJfiPXZFQHmgNQrzUHYS";
+        const API_TOKEN = "LIJOekjwbGP3XzDPPye8Na8tWJpONhM7s9c2YtYwA2Eab9yj4Omqe63u68TO";
 
         const datosAEnviar = {
             api_token: API_TOKEN,
@@ -54,8 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // FUNCIÓ RANKINGS (GET)
     async function mostrarRankings() {
-    const api_token = "pHJNhm719MN5LCVqE839lOse0qvlbL1lBXndZmAWoJfiPXZFQHmgNQrzUHYS";
-    const url =`https://phpstack-1076337-5399863.cloudwaysapps.com/api/classification/pHJNhm719MN5LCVqE839lOse0qvlbL1lBXndZmAWoJfiPXZFQHmgNQrzUHYS/5`;
+    const api_token = "LIJOekjwbGP3XzDPPye8Na8tWJpONhM7s9c2YtYwA2Eab9yj4Omqe63u68TO";
+    const url =`https://phpstack-1076337-5399863.cloudwaysapps.com/api/classification/LIJOekjwbGP3XzDPPye8Na8tWJpONhM7s9c2YtYwA2Eab9yj4Omqe63u68TO/5`;
+    
+
+
+
     try {
         const respuesta = await fetch(url);
         const dades = await respuesta.json();
@@ -83,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // FUNCIÓ CARREGAR COMENTARIS (GET)
     async function cargarComentarios() {
-    const api_token = "pHJNhm719MN5LCVqE839lOse0qvlbL1lBXndZmAWoJfiPXZFQHmgNQrzUHYS";
+    const api_token = "LIJOekjwbGP3XzDPPye8Na8tWJpONhM7s9c2YtYwA2Eab9yj4Omqe63u68TO";
     const url = `https://phpstack-1076337-5399863.cloudwaysapps.com/api/comments/${api_token}`;
 
     try {
